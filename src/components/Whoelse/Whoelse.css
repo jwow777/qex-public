@@ -1,0 +1,24 @@
+.whoelse {
+  width: 280px;
+}
+
+.whoelse__image {
+  display: block;
+  height: 120px;
+}
+
+.whoelse__position {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 17px;
+  color: #606060;
+  margin: 10px 0;
+}
+
+.whoelse__description {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #525252;
+  margin: 0;
+}

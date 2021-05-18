@@ -1,0 +1,24 @@
+.popup-scroll .MuiBackdrop-root {
+  background-color: transparent;
+}
+
+.popup-scroll .MuiDialog-paperWidthSm {
+  max-width: 900px;
+  width: calc(100% - 64px);
+  border-radius: 10px;
+}
+
+.popup-scroll__title-box {
+  display: grid;
+  grid-template-columns: auto max-content;
+  padding: 16px 24px;
+}
+
+.popup-scroll__title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.035em;
+}

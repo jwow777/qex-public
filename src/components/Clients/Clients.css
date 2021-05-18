@@ -1,0 +1,25 @@
+.clients {
+  border-bottom: 1px solid #dedede;
+  padding: 0 20px;
+}
+
+.clients__container {
+  max-width: 1260px;
+  margin: 60px auto 30px;
+}
+
+.clients__title {
+  margin: 0 0 30px;
+}
+
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.clients__image {
+  justify-self: center;
+  align-self: center;
+  padding: 30px 20px;
+}

@@ -1,0 +1,148 @@
+.header {
+  min-height: 756px;
+  padding: 20px 0 0;
+  background-repeat: no-repeat;
+  background-position: top left 615px;
+}
+
+.header__container {
+  border-bottom: 1px solid #dedede;
+}
+
+.header__content {
+  display: flex;
+  margin: 0 auto;
+}
+
+.header__content_top {
+  max-width: 1400px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header__content_middle {
+  max-width: 1260px;
+  min-height: 698px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.header__list {
+  max-width: 1260px;
+  height: 151px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.header__block {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__phone {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  color: #fff;
+}
+
+.header__lang-current {
+  display: block;
+  width: 50px;
+  height: 31px;
+  cursor: pointer;
+}
+
+.header__avatar {
+  cursor: pointer;
+}
+
+.header__button_request.MuiButtonBase-root {
+  background: #fff;
+  border-radius: 9px;
+  padding: 5px 13px;
+}
+
+.header__button_request.MuiButtonBase-root .MuiButton-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.035em;
+  color: #000;
+  text-transform: none;
+}
+
+.header__button_profile {
+  border-radius: 50%;
+}
+
+.header__title {
+  max-width: 800px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 101.1%;
+  letter-spacing: 0.005em;
+  color: #353535;
+  margin: 0;
+}
+
+.header__subtitle {
+  max-width: 560px;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.005em;
+  margin: 30px 0;
+}
+
+.header__button_test.MuiButtonBase-root {
+  background: linear-gradient(180deg, #00cfeb 0%, rgba(150, 150, 150, 0) 100%),
+    #0081df;
+  border-radius: 4px;
+  padding: 12px 17px;
+}
+
+.header__button_test.MuiButtonBase-root .MuiButton-label {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 5px;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: none;
+  color: #fff;
+}
+
+.header__item {
+  max-width: 250px;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.005em;
+  color: #2d2d2d;
+}
+
+.header__important {
+  font-weight: 400;
+}
+
+.header__lang-image {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 1270px) {
+  .header__phone {
+    color: #000;
+  }
+}

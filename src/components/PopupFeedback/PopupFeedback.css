@@ -1,0 +1,239 @@
+.popup__title_feedback {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+  color: #050505;
+  margin-bottom: 35px;
+}
+
+.feedback__phone-block {
+  display: flex;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #c7c9d9;
+}
+
+.feedback__phone-block:hover {
+  border: 1px solid #3e7bfa;
+}
+
+.feedback__phone-block:focus {
+  border: 1px solid #3e7bfa;
+}
+
+.feedback__select {
+  width: 70px;
+  background-color: white;
+  align-items: normal;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.feedback__select div {
+  border-radius: 4px 0 0 4px;
+  white-space: normal;
+  text-overflow: clip;
+  line-height: 24px;
+}
+
+.feedback__select div:focus {
+  background-color: #fff;
+  border-radius: 4px 0 0 4px;
+  min-height: auto;
+}
+
+.feedback__select div svg {
+  width: 19px;
+  height: 19px;
+}
+
+.feedback__select fieldset {
+  border: none;
+}
+
+.feedback__select-image {
+  margin-right: 5px;
+}
+
+.feedback__input-phone-block {
+  height: 38px !important;
+  background: #fff;
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid #c7c9d9;
+}
+
+.feedback__input-phone {
+  width: 100% !important;
+  height: 38px !important;
+  border-radius: 0 4px 4px 0;
+  border: none !important;
+  font-size: 14px;
+  line-height: 24px;
+  padding-top: 2px;
+  font-size: 1rem !important;
+}
+
+.feedback__button-phone {
+  width: 40px;
+  height: 38px !important;
+  background: #fff;
+  border: none !important;
+}
+
+.feedback__input-email {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-left: 1px solid #c7c9d9;
+  color: #303030;
+  overflow: hidden;
+}
+
+.feedback__input-email .MuiOutlinedInput-root fieldset {
+  border: none;
+}
+
+.feedback__input-email:focus-within label {
+  color: #3e7bfa;
+}
+
+.feedback__input-email .MuiOutlinedInput-root:hover fieldset {
+  border: none;
+}
+
+.feedback__input {
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.feedback__input fieldset {
+  border: 1px solid #c7c9d9;
+}
+
+.feedback__input label {
+  color: #8F90A6;
+}
+
+.feedback__input:focus-within label {
+  color: #3e7bfa;
+}
+
+.feedback__input .MuiInput-underline::after {
+  border-bottom-color: '#3e7bfa';
+}
+
+.feedback__input .MuiOutlinedInput-root:hover fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.feedback__input .MuiOutlinedInput-root:focus-within fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.feedback__input-time {
+  width: 90px;
+  height: 40px;
+}
+
+.feedback__input-time .MuiOutlinedInput-adornedEnd {
+  padding: 0;
+}
+
+.feedback__input-time .MuiInputAdornment-positionEnd {
+  margin-left: 0;
+}
+
+.feedback__input-time fieldset {
+  border-color: #c7c9d9;
+}
+
+.feedback__input-time input {
+  font-family: "Inter", sans-serif;
+}
+
+.feedback__input-time .MuiOutlinedInput-root:hover fieldset {
+  border-color: #3e7bfa;
+}
+
+.feedback__input-time .MuiOutlinedInput-root:focus-within fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.feedback__input-date {
+  width: 150px;
+  margin-left: 6px;
+}
+
+.feedback__input-date .MuiOutlinedInput-adornedStart {
+  padding: 0 0 0 11px;
+}
+
+.feedback__input-date .MuiInputAdornment-positionStart {
+  margin-right: 5px;
+}
+
+.feedback__input-date .MuiInputAdornment-positionEnd {
+  margin-left: 0;
+}
+
+.feedback__input-date fieldset {
+  border-color: #c7c9d9;
+}
+
+.feedback__input-date input {
+  font-family: "Inter", sans-serif;
+}
+
+.feedback__input-date .MuiOutlinedInput-root:hover fieldset {
+  border-color: #3e7bfa;
+}
+
+.feedback__input-date .MuiOutlinedInput-root:focus-within fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.feedback__submit {
+  width: auto;
+  height: 40px;
+  background-color: #6875EF;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 17px;
+  color: #f4f4f4;
+  margin-left: auto;
+  text-transform: none;
+}
+
+.feedback__submit:hover {
+  background-color: #3E7BFA;
+}
+
+.feedback__submit:disabled {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.feedback__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: #686868;
+  opacity: 0.6;
+  margin: 0 0 0 -7px;
+}
+
+.feedback__label-politics {
+  cursor: pointer;
+  margin-left: 3px;
+  text-decoration: underline;
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  line-height: 13px;
+  opacity: 0.6;
+  color: #686868;
+}

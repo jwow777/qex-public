@@ -1,0 +1,35 @@
+.services {
+  border-bottom: 1px solid #dedede;
+  padding: 0 20px;
+}
+
+.services__container {
+  max-width: 1260px;
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+}
+
+.services__title {
+  margin: 0;
+}
+
+.services__subtitle {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 42px;
+  letter-spacing: 0.02em;
+  color: #2b2b2b;
+  margin: 50px 0 30px;
+}
+.services__list_direction {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-gap: 33px;
+}
+
+.services__list_stage .MuiBreadcrumbs-li {
+  width: calc((100% - (35px + 16px) * 4) / 5);
+  align-self: start;
+}

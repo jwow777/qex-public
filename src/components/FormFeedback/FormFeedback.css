@@ -1,0 +1,271 @@
+.formfeedback {
+  width: 100%;
+  display: grid;
+  grid-row-gap: 10px;
+}
+
+.formfeedback__phone-block {
+  display: flex;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #c7c9d9;
+}
+
+.formfeedback__phone-block:hover {
+  border: 1px solid #3e7bfa;
+}
+
+.formfeedback__phone-block:focus {
+  border: 1px solid #3e7bfa;
+}
+
+.formfeedback__select.MuiInputBase-root {
+  width: 70px;
+  background-color: white;
+  align-items: normal;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.formfeedback__select div {
+  border-radius: 4px 0 0 4px;
+  white-space: normal;
+  text-overflow: clip;
+  line-height: 24px;
+}
+
+.formfeedback__select div:focus {
+  background-color: #fff;
+  border-radius: 4px 0 0 4px;
+  min-height: auto;
+}
+
+.formfeedback__select div svg {
+  width: 19px;
+  height: 19px;
+}
+
+.formfeedback__select fieldset {
+  border: none;
+}
+
+.formfeedback__select-image {
+  margin-right: 5px;
+}
+
+.formfeedback__input-phone-block {
+  height: 38px;
+  background: #fff;
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid #c7c9d9;
+}
+
+.react-tel-input .form-control.formfeedback__input-phone {
+  width: 100%;
+  height: 38px;
+  border-radius: 0 4px 4px 0;
+  border: none;
+  font-size: 14px;
+  line-height: 24px;
+  padding-top: 2px;
+  font-size: 1rem;
+}
+
+.react-tel-input .formfeedback__button-phone.flag-dropdown {
+  width: 40px;
+  height: 38px;
+  background: #fff;
+  border: none;
+}
+
+.react-tel-input .country-list {
+  width: 329px !important;
+}
+
+.formfeedback__input-email {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-left: 1px solid #c7c9d9;
+  color: #303030;
+  overflow: hidden;
+}
+
+.formfeedback__input-email .MuiOutlinedInput-root fieldset {
+  border: none;
+}
+
+.formfeedback__input-email:focus-within label {
+  color: #3e7bfa;
+}
+
+.formfeedback__input-email .MuiOutlinedInput-root:hover fieldset {
+  border: none;
+}
+
+.formfeedback__input {
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.formfeedback__input fieldset {
+  border: 1px solid #c7c9d9;
+}
+
+.formfeedback__input label {
+  color: #8f90a6;
+}
+
+.formfeedback__input:focus-within label {
+  color: #3e7bfa;
+}
+
+.formfeedback__input .MuiInput-underline::after {
+  border-bottom-color: "#3e7bfa";
+}
+
+.formfeedback__input .MuiOutlinedInput-root:hover fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.formfeedback__input .MuiOutlinedInput-root:focus-within fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.formfeedback__input-time {
+  width: 90px;
+  height: 40px;
+}
+
+.formfeedback__input-time .MuiOutlinedInput-adornedEnd {
+  padding: 0;
+}
+
+.formfeedback__input-time .MuiInputAdornment-positionEnd {
+  margin-left: 0;
+}
+
+.formfeedback__input-time fieldset {
+  border-color: #c7c9d9;
+}
+
+.formfeedback__input-time input {
+  font-family: "Inter", sans-serif;
+}
+
+.formfeedback__input-time .MuiOutlinedInput-root:hover fieldset {
+  border-color: #3e7bfa;
+}
+
+.formfeedback__input-time .MuiOutlinedInput-root:focus-within fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.formfeedback__input-date {
+  width: 150px;
+  margin-left: 6px;
+}
+
+.formfeedback__input-date .MuiOutlinedInput-adornedStart {
+  padding: 0 0 0 11px;
+}
+
+.formfeedback__input-date .MuiInputAdornment-positionStart {
+  margin-right: 5px;
+}
+
+.formfeedback__input-date .MuiInputAdornment-positionEnd {
+  margin-left: 0;
+}
+
+.formfeedback__input-date fieldset {
+  border-color: #c7c9d9;
+}
+
+.formfeedback__input-date input {
+  font-family: "Inter", sans-serif;
+}
+
+.formfeedback__input-date .MuiOutlinedInput-root:hover fieldset {
+  border-color: #3e7bfa;
+}
+
+.formfeedback__input-date .MuiOutlinedInput-root:focus-within fieldset {
+  border: 1px solid #3e7bfa;
+}
+
+.formfeedback__submit.MuiButtonBase-root {
+  width: auto;
+  height: 40px;
+  background-color: #6875ef;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 17px;
+  color: #f4f4f4;
+  margin-left: auto;
+  text-transform: none;
+}
+
+.formfeedback__submit:hover {
+  background-color: #3e7bfa;
+}
+
+.formfeedback__submit:disabled {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.formfeedback__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: #686868;
+  opacity: 0.6;
+  margin: 0 0 0 -7px;
+}
+
+.formfeedback__label-politics {
+  cursor: pointer;
+  margin-left: 3px;
+  text-decoration: underline;
+  font-family: "Inter", sans-serif;
+  font-size: 10.5px;
+  line-height: 13px;
+  opacity: 0.6;
+  color: #686868;
+}
+
+.formfeedback__button-block {
+  display: flex;
+}
+
+.formfeedback__button-block::after {
+  content: "Укажите, когда с Вами связаться";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: #242424;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 620px) {
+  .react-tel-input .country-list {
+    width: calc(100vw - 285px) !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .react-tel-input .country-list {
+    width: calc(100vw - 151px) !important;
+  }
+}

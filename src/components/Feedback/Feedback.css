@@ -1,0 +1,173 @@
+.feedback {
+  border-bottom: 1px solid #dedede;
+  padding: 0 20px;
+}
+
+.feedback__container {
+  max-width: 1260px;
+  display: grid;
+  grid-template-columns: calc(40% - 15px) 60%;
+  grid-gap: 40px 15px;
+  margin: 60px auto;
+}
+
+.feedback__image {
+  display: block;
+  grid-row: 1/4;
+  width: 100%;
+  max-width: 455px;
+  max-height: 390px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.feedback__title {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0.01em;
+  margin: 0;
+  grid-column: 2;
+  align-self: center;
+}
+
+.feedback__subtitle {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: -0.035em;
+  margin: 0;
+  grid-column: 2;
+  align-self: center;
+}
+
+.feedback__form {
+  display: grid;
+  grid-template-columns: 300px max-content;
+  align-self: center;
+  grid-gap: 0 15px;
+}
+
+.feedback__form_extra {
+  display: grid;
+  grid-template-columns: 460px;
+  grid-gap: 0;
+}
+
+.feedback__submit-site {
+  width: auto;
+  background-color: #6875EF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 6px 10px;
+  color: #fff;
+  text-transform: none;
+}
+
+.feedback__submit-site_hidden {
+  display: none;
+}
+
+.feedback__submit-site:hover {
+  background-color: #3E7BFA;
+}
+
+.feedback__submit-site:disabled {
+  background-color: #6875EF;
+  color: #fff;
+}
+
+.feedback__submit-site:disabled:hover {
+  background-color: #3E7BFA;
+}
+
+.feedback__extra-input {
+  display: grid;
+  grid-column: 1;
+  grid-row-gap: 10px;
+  margin: 10px 0 0;
+  min-height: 0px;
+  height: 0px;
+  overflow: hidden;
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition-duration: 204ms;
+}
+
+.feedback__extra-input_visible {
+  height: auto;
+  overflow: visible;
+  transition-duration: 204ms;
+}
+
+.feedback__extra-input_visible::after {
+  content: "Укажите, когда с Вами связаться";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10.5px;
+  line-height: 13px;
+  color: #242424;
+  opacity: 0.4;
+}
+
+.feedback__button-block {
+  display: flex;
+}
+
+.feedback__input_site {
+  grid-column: 1;
+}
+
+.feedback__checkbox {
+}
+
+.feedback__checkbox_site {
+  grid-column: 1;
+}
+
+.feedback__file {
+  grid-column: 1/3;
+  height: 20px;
+  justify-self: start;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 13px;
+  color: #686868;
+  text-transform: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.feedback__file_hidden {
+  display: none;
+}
+
+.feedback__form-block {
+  display: flex;
+  border-radius: 4px;
+}
+
+.feedback__image-pdf {
+}
+
+.feedback__image-pdf_small {
+  width: 16px;
+  height: 16px;
+}
+
+.feedback__image-pdf_big {
+  position: absolute;
+  right: -13px;
+  bottom: -13px;
+  width: 27px;
+  height: 27px;
+}

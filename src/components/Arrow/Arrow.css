@@ -1,0 +1,7 @@
+.link__arrow {
+  margin: 3px 0 0 10px;
+}
+
+.link__arrow_down {
+  transform: rotate(90deg);
+}

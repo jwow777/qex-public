@@ -1,0 +1,53 @@
+.popup__close {
+  position: absolute !important;
+  top: 15px;
+  right: 15px;
+}
+
+.popup__title {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal;
+}
+
+.popup__feedback .MuiBackdrop-root {
+  background-color: transparent;
+}
+
+.popup__feedback .MuiDialog-paperWidthSm {
+  max-width: 550px;
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 35px 75px;
+}
+
+.popup__feedback__title-box {
+  display: grid;
+  grid-template-columns: auto max-content;
+  padding: 16px 24px;
+}
+
+.popup__feedback__title {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.035em;
+}
+
+@media screen and (max-width: 500px) {
+  .popup__close {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .popup__feedback .MuiDialog-paperWidthSm {
+    max-width: calc(100% - 30px) !important;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 25px;
+  }
+}

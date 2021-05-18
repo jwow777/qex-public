@@ -1,0 +1,26 @@
+.crewman {
+  width: 290px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+.crewman__name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  margin: 0;
+}
+
+.crewman__position {
+  font-size: 25px;
+  line-height: 30px;
+  color: #606060;
+  margin: 8px 0 15px;
+}
+
+.crewman__quote {
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 30px;
+  margin: 0;
+}

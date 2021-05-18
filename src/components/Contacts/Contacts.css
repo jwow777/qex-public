@@ -1,0 +1,133 @@
+.contacts {
+  padding: 0 20px;
+}
+
+.contacts__container {
+  max-width: 1260px;
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto 90px;
+}
+
+.contacts__title {
+  margin: 0 0 60px;
+}
+
+.contacts__list {
+  display: grid;
+  grid-row-gap: 50px;
+}
+
+.contacts__item {
+  position: relative;
+}
+
+.map {
+  height: 350px;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 7px;
+}
+
+.contacts__gray {
+  filter: grayscale(100%);
+}
+
+.map__info {
+  width: 300px;
+  position: absolute;
+  top: 35px;
+  left: 40px;
+  background: #fff;
+  border-radius: 7px;
+  box-sizing: border-box;
+  padding: 20px 40px;
+}
+
+.map__soon {
+  width: 170px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  border-radius: 6px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.contacts__map-list {
+  display: grid;
+  grid-row-gap: 7px;
+  margin: 10px 0;
+}
+
+.contacts__map-title {
+  display: flex;
+  align-content: center;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.contacts__map-image {
+  width: 32px;
+  height: 19px;
+  display: block;
+  margin-right: 7px;
+}
+
+.contacts__map-text {
+  display: grid;
+  grid-template-columns: 20px auto;
+  align-items: center;
+  grid-column-gap: 5px;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.contacts__map-text_main {
+  grid-template-columns: max-content auto;
+  font-weight: 400;
+}
+
+.contacts__circle-block {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 5px;
+}
+
+.contacts__circle {
+  width: 19px;
+  height: 19px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.contacts__social-list {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  grid-column-gap: 20px;
+}
+
+.contacts__social-image {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 50%;
+}
