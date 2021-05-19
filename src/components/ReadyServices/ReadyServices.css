@@ -7,7 +7,7 @@
 
 .ready-services__container {
   max-width: 1260px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .ready-services__title {
@@ -41,34 +41,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.ready-services__link {
-  display: flex;
-  align-items: center;
-  font-weight: 300;
-  font-size: 25px;
-  line-height: 30px;
-  color: #dedede;
-}
-
-.ready-services__button {
-  width: 198px;
-  height: 40px;
-  background-color: #fff;
-  align-self: flex-end;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  border: 1px solid #679afd;
-  border-radius: 5px;
-  filter: drop-shadow(0px 0px 5px rgba(103, 154, 253, 0.2));
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: -0.035em;
-  text-decoration: none;
-  color: #679afd;
 }
 
 @media screen and (max-width: 500px) {

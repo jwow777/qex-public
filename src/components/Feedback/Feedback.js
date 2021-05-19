@@ -1,5 +1,6 @@
+/* eslint-disable prefer-template */
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import MuiAlert from '@material-ui/lab/Alert';
 import {
   Button,
@@ -63,15 +64,23 @@ function Feedback({ openPolicy }) {
   const [state, setState] = useState({
     communication: 'call',
     phone: '',
-    country: '',
+    country: {},
     email: '',
     firstName: '',
     company: '',
     task: '',
     policy: true,
+    localDate: new Date(),
     date: new Date(),
   });
-  const [phone, setPhone] = useState('');
+
+  const handleDate = (date) => {
+    const twoNumber = (num) => (num < 10 ? '0' + num : num);
+    const timezone = (num) => (num < 0 ? num : '+' + num);
+
+    return `${twoNumber(date.getDate())}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(date.getHours())}:${twoNumber(date.getMinutes())} UTC: ${timezone(date.getTimezoneOffset() / -60)}`;
+  };
+
   const [openSuccess, setOpenSuccess] = useState(false);
 
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -82,6 +91,16 @@ function Feedback({ openPolicy }) {
 
   const handleChange = (e) => setState({ ...state, [e.target.name]: e.target.value });
   const handleChangeCheckbox = (e) => setState({ ...state, [e.target.name]: e.target.checked });
+  const handleChangePhone = (phone, country) => {
+    setState({
+      ...state,
+      phone,
+      country: {
+        country: country.name,
+        dialCode: country.dialCode,
+      },
+    });
+  };
 
   const handleCloseSuccess = (reason) => {
     if (reason === 'clickaway') {
@@ -89,8 +108,6 @@ function Feedback({ openPolicy }) {
     }
     setOpenSuccess(false);
   };
-
-  useEffect(() => setState({ ...state, phone }), [phone]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -104,11 +121,14 @@ function Feedback({ openPolicy }) {
         body: {
           communication: state.communication,
           phone: state.phone,
+          country: state.country,
+          dialCode: state.dialCode,
           email: state.email,
           firstName: state.firstName,
           company: state.company,
           task: state.task,
-          chosenDate: state.date,
+          localDate: handleDate(state.localDate),
+          chosenDate: handleDate(state.date),
         },
       }),
     }).then((res) => {
@@ -188,9 +208,8 @@ function Feedback({ openPolicy }) {
             ) : (
               <PhoneInput
                 country={'ru'}
-                className='input popup__input popup__input_feedback'
-                value={phone}
-                onChange={setPhone}
+                value={state.phone}
+                onChange={handleChangePhone}
                 containerClass={'feedback__input-phone-block'}
                 inputClass={'input feedback__input-phone'}
                 buttonClass={'feedback__button-phone'}

@@ -1,5 +1,6 @@
+/* eslint-disable prefer-template */
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Checkbox,
@@ -62,26 +63,42 @@ function FormFeedback({ openPolicy }) {
   const [state, setState] = useState({
     communication: 'call',
     phone: '',
-    country: '',
+    country: {},
     email: '',
     firstName: '',
     company: '',
     task: '',
     policy: true,
+    localDate: new Date(),
     date: new Date(),
   });
 
-  const [phone, setPhone] = useState('');
+  const handleDate = (date) => {
+    const twoNumber = (num) => (num < 10 ? '0' + num : num);
+    const timezone = (num) => (num < 0 ? num : '+' + num);
+
+    return `${twoNumber(date.getDate())}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(date.getHours())}:${twoNumber(date.getMinutes())} UTC: ${timezone(date.getTimezoneOffset() / -60)}`;
+  };
+
   const [openSuccess, setOpenSuccess] = useState(false);
 
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const handleDateChange = (date) => {
+  const handleChangeDate = (date) => {
     setState({ ...state, date });
     setSelectedDate(date);
   };
-
   const handleChange = (e) => setState({ ...state, [e.target.name]: e.target.value });
   const handleChangeCheckbox = (e) => setState({ ...state, [e.target.name]: e.target.checked });
+  const handleChangePhone = (phone, country) => {
+    setState({
+      ...state,
+      phone,
+      country: {
+        country: country.name,
+        dialCode: country.dialCode,
+      },
+    });
+  };
 
   const handleCloseSuccess = (reason) => {
     if (reason === 'clickaway') {
@@ -89,8 +106,6 @@ function FormFeedback({ openPolicy }) {
     }
     setOpenSuccess(false);
   };
-
-  useEffect(() => setState({ ...state, phone }), [phone]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -104,11 +119,14 @@ function FormFeedback({ openPolicy }) {
         body: {
           communication: state.communication,
           phone: state.phone,
+          country: state.country,
+          dialCode: state.dialCode,
           email: state.email,
           firstName: state.firstName,
           company: state.company,
           task: state.task,
-          chosenDate: state.date,
+          localDate: handleDate(state.localDate),
+          chosenDate: handleDate(state.date),
         },
       }),
     }).then((res) => {
@@ -168,8 +186,8 @@ function FormFeedback({ openPolicy }) {
         ) : (
           <PhoneInput
             country={'ru'}
-            value={phone}
-            onChange={setPhone}
+            value={state.phone}
+            onChange={handleChangePhone}
             containerClass={'formfeedback__input-phone-block'}
             inputClass={'formfeedback__input-phone'}
             buttonClass={'formfeedback__button-phone'}
@@ -249,7 +267,7 @@ function FormFeedback({ openPolicy }) {
             value={selectedDate}
             minutesStep={5}
             size='small'
-            onChange={handleDateChange}
+            onChange={handleChangeDate}
             className='formfeedback__input-time'
           />
           <DatePicker
@@ -273,7 +291,7 @@ function FormFeedback({ openPolicy }) {
             }}
             value={selectedDate}
             size='small'
-            onChange={handleDateChange}
+            onChange={handleChangeDate}
             className='formfeedback__input-date'
           />
         </MuiPickersUtilsProvider>

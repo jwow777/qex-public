@@ -28,7 +28,7 @@ function Footer() {
             </ul>
           </nav>
         </div>
-        <div>
+        <div className='footer__politics-box'>
           <div className='footer__politics'>
             <Link to='/policy' className='link footer__link'>
               Политика конфиденциальности

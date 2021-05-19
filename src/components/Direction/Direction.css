@@ -46,3 +46,40 @@
   font-size: 15px;
   line-height: 18px;
 }
+
+@media screen and (max-width: 500px) {
+  .direction {
+    grid-template-columns: 60px auto;
+    grid-gap: 7px 10px;
+    padding: 10px;
+  }
+
+  .direction__image {
+    grid-row: 1;
+    width: 60px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .direction__title {
+    grid-column: 2;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 22px;
+    align-self: center;
+  }
+
+  .direction__text {
+    grid-column: 1/3;
+    text-align: justify;
+  }
+
+  .direction__block {
+    grid-column: 1/3;
+  }
+
+  .direction__block-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

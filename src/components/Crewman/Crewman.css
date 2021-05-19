@@ -24,3 +24,35 @@
   line-height: 30px;
   margin: 0;
 }
+
+@media screen and (max-width: 500px) {
+  .crewman {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 140px auto;
+    grid-column-gap: 20px;
+  }
+
+  .crewman__image {
+    grid-row: 1/5;
+    width: 140px;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+
+  .crewman__name {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .crewman__position {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 12px 0;
+  }
+
+  .crewman__quote {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}

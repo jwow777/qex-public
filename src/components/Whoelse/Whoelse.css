@@ -22,3 +22,19 @@
   color: #525252;
   margin: 0;
 }
+
+@media screen and (max-width: 500px) {
+  .whoelse {
+    width: 100%;
+  }
+
+  .whoelse__position {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .whoelse__description {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

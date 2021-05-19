@@ -14,6 +14,10 @@ import logo from '../../images/header/logo.png';
 import ru from '../../images/flags/ru.png';
 import us from '../../images/flags/us.png';
 
+import crew from '../../images/header/crew.jpg';
+import easyinterface from '../../images/header/interface.jpg';
+import business from '../../images/header/business.jpg';
+
 function Header({ onFeedback }) {
   const [language, setLanguage] = useState(ru);
   const [anchorElLang, setAnchorElLang] = useState(null);
@@ -85,14 +89,33 @@ function Header({ onFeedback }) {
       </div>
       <ul className='list header__list'>
         <li className='header__item'>
-          Всегда удобный <span className='header__important'>интерфейс</span>
+          <img src={crew} alt='интерфейс' className='header__list-image' />
+          <p className='header__item-text'>
+            Всегда удобный
+            <span className='header__important'> интерфейс</span>
+          </p>
         </li>
         <li className='header__item'>
-          Ваша команда cможет <span className='header__important'>больше</span>
+          <img
+            src={easyinterface}
+            alt='команда'
+            className='header__list-image'
+          />
+          <p className='header__item-text'>
+            Ваша команда cможет
+            <span className='header__important'> больше</span>
+          </p>
         </li>
         <li className='header__item'>
-          Погружаемся в{' '}
-          <span className='header__important'>бизнес-процессы</span>
+          <img
+            src={business}
+            alt='бизнес-процессы'
+            className='header__list-image'
+          />
+          <p className='header__item-text'>
+            Погружаемся в
+            <span className='header__important'> бизнес-процессы</span>
+          </p>
         </li>
       </ul>
     </header>

@@ -43,10 +43,10 @@ function Whyme() {
             <p className='whyme__item-description'>
               Мы знаем, кто конечный пользователь наших решений и ответственно
               подходим к проектировке. Удобный, интуитивный интерфейс нужен не
-              просто для красоты -{' '}
+              просто для красоты -
               <span className='whyme__item-description_bold'>
                 он экономит много операционного времени
-              </span>{' '}
+              </span>
               вашей команде и убирает необходимость длительного обучения.
             </p>
           </li>
@@ -54,15 +54,16 @@ function Whyme() {
             <img
               src={soft}
               alt='Возможность поддержки софта другими разработчиками'
+              className='whyme__item-image'
             />
-            <h3 className='whyme__item-title'>
+            <h3 className='whyme__item-title whyme__item-title_small'>
               Возможность поддержки софта другими разработчиками
             </h3>
-            <p className='whyme__item-description'>
+            <p className='whyme__item-description whyme__item-description_small'>
               Мы выбираем популярный стек разработки и всегда пишем{' '}
               <span className='whyme__item-description_bold'>
                 документацию всего проекта.
-              </span>{' '}
+              </span>
               Наши решения можем развивать и поддерживать мы, а может и другая
               команда.
             </p>
@@ -71,13 +72,14 @@ function Whyme() {
             <img
               src={garant}
               alt='За все 3 года работы компании 100% проектов доведено до конца'
+              className='whyme__item-image'
             />
-            <h3 className='whyme__item-title'>
+            <h3 className='whyme__item-title whyme__item-title_small'>
               За все 3 года работы компании 100% проектов доведено до конца
             </h3>
-            <p className='whyme__item-description'>
+            <p className='whyme__item-description whyme__item-description_small'>
               Пока не было ни одной задачи, которую не получалось решить. Это
-              одна из основ{' '}
+              одна из основ
               <span className='whyme__item-description_bold'>
                 нашей философии.
               </span>

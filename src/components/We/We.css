@@ -1,13 +1,13 @@
 .we {
   border-bottom: 1px solid #dedede;
-  padding: 0 20px;
+  padding: 60px 20px;
 }
 
 .we__container {
   max-width: 1260px;
   display: flex;
   flex-direction: column;
-  margin: 60px auto;
+  margin: auto;
 }
 
 .we__title {
@@ -38,3 +38,32 @@
   color: #2b2b2b;
   margin: 70px 0 45px;
 }
+
+@media screen and (max-width: 500px) {
+  .we {
+    padding: 50px 20px;
+  }
+
+  .we__title {
+    margin: 0 0 40px;
+  }
+
+  .we__list_crew {
+    display: grid;
+    grid-row-gap: 50px;
+  }
+
+  .we__list_whoelse {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 45px 15px;
+  }
+
+  .we__subtitle {
+    margin: 50px 0 30px;
+  }
+
+  .we .link_navigation {
+    display: none;
+  }
+}
+

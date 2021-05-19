@@ -171,3 +171,9 @@
   width: 27px;
   height: 27px;
 }
+
+@media screen and (max-width: 500px) {
+  .feedback {
+    display: none;
+  }
+}

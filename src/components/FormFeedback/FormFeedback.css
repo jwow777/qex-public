@@ -268,4 +268,36 @@
   .react-tel-input .country-list {
     width: calc(100vw - 151px) !important;
   }
+
+  .formfeedback__input-time {
+    width: 80px;
+  }
+
+  .formfeedback__submit.MuiButtonBase-root {
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .popup__feedback .MuiDialog-paperWidthSm {
+    padding: 25px 15px;
+  }
+
+  .formfeedback__button-block {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-gap: 20px 10px;
+  }
+
+  .formfeedback__button-block::after {
+    bottom: 45px;
+  }
+
+  .formfeedback__input-date {
+    margin-left: 0;
+  }
+
+  .formfeedback__submit.MuiButtonBase-root {
+    grid-column: 1/3;
+  }
 }
