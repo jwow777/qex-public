@@ -73,7 +73,7 @@
   font-weight: 400;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .whyme {
     padding: 50px 20px;
   }

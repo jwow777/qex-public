@@ -8,9 +8,12 @@ import { CircularProgress } from '@material-ui/core';
 import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
-import Policy from '../Policy/Policy';
+import PolicyPage from '../PolicyPage/PolicyPage';
+import NotFound from '../NotFound/NotFound';
 
-const Footer = lazy(() => import('../Footer/Footer'));
+import Footer from '../Footer/Footer';
+import HeaderMenu from '../HeaderMenu/HeaderMenu';
+
 const PopupFeedback = lazy(() => import('../PopupFeedback/PopupFeedback'));
 const PopupPolicy = lazy(() => import('../PopupPolicy/PopupPolicy'));
 
@@ -44,11 +47,16 @@ function App() {
               close={handleCloseFeedback}
             />
             <PopupPolicy open={openPolicy} close={handleClosePolicy}/>
-            <Footer/>
           </Suspense>
+          <Footer/>
         </Route>
-        <Route exact path='/policy'>
-          <Policy/>
+        <Route path='/policy'>
+          <HeaderMenu policy={true}/>
+          <PolicyPage/>
+          <Footer/>
+        </Route>
+        <Route path='*'>
+          <NotFound/>
         </Route>
       </Switch>
     </>

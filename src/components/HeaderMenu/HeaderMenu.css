@@ -1,0 +1,127 @@
+.header__content_top {
+  max-width: 1400px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__content_policy {
+  padding: 20px;
+}
+
+.header__block {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-column-gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__phone {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 23px;
+  color: #fff;
+}
+
+.header__lang-current {
+  display: block;
+  width: 50px;
+  height: 31px;
+  cursor: pointer;
+}
+
+.header__avatar {
+  cursor: pointer;
+}
+
+.header__button_request.MuiButtonBase-root {
+  background: #fff;
+  border-radius: 9px;
+  padding: 5px 13px;
+}
+
+.header__button_request.MuiButtonBase-root .MuiButton-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.035em;
+  color: #000;
+  text-transform: none;
+}
+
+.header__button_request_mobile.MuiButtonBase-root {
+  display: none;
+}
+
+.header__button_profile {
+  border-radius: 50%;
+}
+
+.header__menu-button-mobile.MuiIconButton-root {
+  display: none;
+}
+
+.header__lang-image {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 1045px) {
+  .header__phone {
+    color: #000;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header__content_policy {
+    padding: 20px 15px 30px;
+  }
+
+  .header__lang-current {
+    width: 40px;
+    height: 25px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header__block {
+    grid-template-columns: repeat(1, max-content);
+    grid-column-gap: 10px;
+  }
+
+  .header__phone {
+    display: none;
+  }
+
+  .header__button_request.MuiButtonBase-root {
+    display: none;
+  }
+
+  .header__button_request_mobile.MuiButtonBase-root {
+    display: block;
+    height: 32px;
+    border-radius: 2px;
+  }
+
+  .header__button_request_mobile.MuiButtonBase-root .MuiButton-label {
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .header__avatar.MuiAvatar-root {
+    display: none;
+  }
+
+  .header__menu-button-mobile.MuiIconButton-root {
+    display: block;
+    color: #fff;
+    margin: -12px;
+  }
+
+  .header__menu-button-mobile.MuiIconButton-root .MuiSvgIcon-root {
+    width: 40px;
+    height: 40px;
+  }
+}

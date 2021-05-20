@@ -129,6 +129,7 @@ function Feedback({ openPolicy }) {
           task: state.task,
           localDate: handleDate(state.localDate),
           chosenDate: handleDate(state.date),
+          policy: true,
         },
       }),
     }).then((res) => {

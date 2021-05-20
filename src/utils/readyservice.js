@@ -7,6 +7,7 @@ const readyServices = [
     textColor: '#fff',
     alpha: false,
     colorAlpha: '',
+    beta: true,
     clock: '',
     href: 'http://eris.bz/',
   },

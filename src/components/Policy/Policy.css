@@ -37,3 +37,10 @@
 .policy__item_title:nth-child(8) {
   margin: 25px 0 0;
 }
+
+@media screen and (max-width: 600px) {
+  .policy__list {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

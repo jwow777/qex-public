@@ -50,13 +50,12 @@ function Contacts() {
         <h2 className='title contacts__title'>Контакты</h2>
         <ul className='list contacts__list'>
           <li className='contacts__item'>
-            <div id='map-moscow' className='map'></div>
             <div className='map__info'>
               <h3 className='contacts__map-title contacts__map-title_ru'>
                 <img src={ru} alt='Россия' className='contacts__map-image'/>Россия, Москва
               </h3>
               <ul className='list contacts__map-list'>
-                <li className='contacts__map-text contacts__map-text_bold'>
+                <li className='contacts__map-text contacts__map-text_main'>
                   <img src={metro} alt='Станция метро' />
                   <span>Маяковская</span>
                 </li>
@@ -96,9 +95,9 @@ function Contacts() {
                 </li>
               </ul>
             </div>
+            <div id='map-moscow' className='map'></div>
           </li>
           <li className='contacts__item contacts__gray'>
-            <div id='map-ny' className='map'></div>
             <div className='map__info'>
               <h3 className='contacts__map-title contacts__map-title_us'>
               <img src={us} alt='USA' className='contacts__map-image'/>USA, New York
@@ -117,6 +116,7 @@ function Contacts() {
                 </li>
               </ul>
             </div>
+            <div id='map-ny' className='map'></div>
             <div className='map__soon'>
               <span>Скоро открытие</span>
             </div>

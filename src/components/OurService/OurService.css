@@ -54,7 +54,7 @@
   margin: 0;
 }
 
-.our-service__alpha-block {
+.our-service__version-block {
   position: absolute;
   bottom: -11px;
   right: -15px;
@@ -75,7 +75,7 @@
   line-height: 22px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .our-service {
     height: 100px;
     grid-template-rows: 55% 45%;
@@ -125,7 +125,7 @@
     line-height: 15px;
   }
 
-  .our-service__alpha-block {
+  .our-service__version-block {
     bottom: 0;
     right: 0;
     background-color: rgba(255, 255, 255, 0.7);
@@ -137,7 +137,7 @@
     line-height: 18px;
   }
 
-  .our-service__alpha-block_popup {
+  .our-service__version-block_popup {
     bottom: 5px;
     right: 5px;
   }

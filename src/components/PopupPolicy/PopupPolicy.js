@@ -5,17 +5,39 @@ import {
   DialogContent,
   Grid,
   IconButton,
-  Typography,
+  makeStyles,
 } from '@material-ui/core';
 import { Clear } from '@material-ui/icons';
 import Policy from '../Policy/Policy';
 
+const useStyles = makeStyles((theme) => ({
+  container: {
+    '& .MuiBackdrop-root': {
+      backgroundColor: 'transparent',
+    },
+    '& .MuiDialog-paperWidthSm': {
+      maxWidth: 900,
+      maxHeight: '90vh',
+      width: 'calc(100% - 64px)',
+      borderRadius: 10,
+      [theme.breakpoints.down('xs')]: {
+        width: 'calc(100% - 32px)',
+        maxHeight: '80vh',
+        margin: 16,
+        padding: '20px 0',
+      },
+    },
+  },
+}));
+
 function PopupPolicy({ open, close }) {
+  const classes = useStyles();
+
   return (
     <Dialog
       open={open}
       onClose={close}
-      className='popup-scroll'
+      className={classes.container}
     >
       <Grid
         container
@@ -24,13 +46,10 @@ function PopupPolicy({ open, close }) {
         alignItems='center'
         className='popup-scroll__title-box'
       >
-        <Typography
-          variant='h2'
-          className='popup-scroll__title'
-        >
+        <h2 className='popup-scroll__title'>
           Политика в отношении обработки персональных данных
-        </Typography>
-        <IconButton onClick={close}>
+        </h2>
+        <IconButton onClick={close} className='popup__close'>
           <Clear />
         </IconButton>
       </Grid>

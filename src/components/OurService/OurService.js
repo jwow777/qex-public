@@ -10,6 +10,7 @@ function OurService({ item, styles }) {
     icon,
     alpha,
     colorAlpha,
+    beta,
     href,
   } = item;
 
@@ -25,7 +26,7 @@ function OurService({ item, styles }) {
               <h3 className='our-service__title'>{title}</h3>
               <p className='our-service__about'>{subtitle}</p>
               {alpha && (
-                <div className='our-service__alpha-block'>
+                <div className='our-service__version-block'>
                   <svg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <circle cx='7.31641' cy='6.5' r='6' stroke={colorAlpha}/>
                     <circle cx='7.31641' cy='6.5' r='0.5' fill={colorAlpha}/>
@@ -49,7 +50,7 @@ function OurService({ item, styles }) {
               <h3 className='our-service__title'>{title}</h3>
               <p className='our-service__about'>{subtitle}</p>
               {alpha && (
-                <div className='our-service__alpha-block'>
+                <div className='our-service__version-block'>
                   <svg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <circle cx='7.31641' cy='6.5' r='6' stroke={colorAlpha}/>
                     <circle cx='7.31641' cy='6.5' r='0.5' fill={colorAlpha}/>
@@ -65,6 +66,11 @@ function OurService({ item, styles }) {
                     <rect x='7.61719' y='6.75' width='0.5' height='4' transform='rotate(-89.6185 7.61719 6.75)' fill={colorAlpha}/>
                   </svg>
                   <span style={{ color: colorAlpha }}>alpha</span>
+                </div>
+              )}
+              {beta && (
+                <div className='our-service__version-block'>
+                  <span style={{ color: colorAlpha }}>beta</span>
                 </div>
               )}
             </div>
