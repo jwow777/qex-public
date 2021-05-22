@@ -8,12 +8,17 @@
   padding: 20px;
 }
 
+.header__logo {
+  display: block;
+}
+
 .header__block {
   display: grid;
   grid-template-columns: repeat(2, max-content);
   grid-column-gap: 20px;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 6px;
 }
 
 .header__phone {

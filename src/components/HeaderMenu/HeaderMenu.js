@@ -37,7 +37,7 @@ function HeaderMenu({ policy }) {
   return (
     <div className={`header__content header__content_top${policy ? ' header__content_policy' : ''}`}>
       <Link to='/'>
-        <img src={logo} alt='QEX' />
+        <img src={logo} alt='QEX' className='header__logo'/>
       </Link>
       <div className='header__block'>
         <a href='tel:+74954899696' className='link header__phone'>

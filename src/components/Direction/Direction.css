@@ -71,7 +71,6 @@
 
   .direction__text {
     grid-column: 1/3;
-    text-align: justify;
   }
 
   .direction__block {

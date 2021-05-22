@@ -1,12 +1,13 @@
 .header {
   min-height: 756px;
-  padding: 20px 20px 0;
+  padding: 20px 0 0;
   background-repeat: no-repeat;
   background-position: top left 615px;
 }
 
 .header__container {
   border-bottom: 1px solid #dedede;
+  padding: 0 20px;
 }
 
 .header__content {
@@ -100,12 +101,13 @@
 
 @media screen and (max-width: 600px) {
   .header {
-    padding: 20px 15px 75px;
+    padding: 20px 0 75px;
     background-position: top left 100px;
   }
 
   .header__container {
     border: none;
+    padding: 0 15px;
   }
 
   .header__content_middle {

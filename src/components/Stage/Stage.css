@@ -3,6 +3,7 @@
   font-size: 20px;
   line-height: 24px;
   margin: 20px 0 10px;
+  color: #000;
 }
 
 .stage__text {
@@ -10,6 +11,7 @@
   font-size: 18px;
   line-height: 22px;
   margin: 0;
+  color: #000;
 }
 
 .stage__image {
@@ -30,13 +32,11 @@
     font-size: 15px;
     line-height: 18px;
     margin: 0;
-    color: #000;
   }
 
   .stage__text {
     font-size: 13px;
     line-height: 16px;
-    color: #000;
   }
 
   .stage__image {

@@ -60,6 +60,7 @@
 
   .services__list_stage .MuiBreadcrumbs-ol {
     justify-content: center;
+    grid-row-gap: 25px;
   }
 
   .services__list_stage .MuiBreadcrumbs-li {
@@ -72,7 +73,6 @@
 
   .services__list_stage .MuiBreadcrumbs-li:nth-child(9) {
     width: calc(100% / 2);
-    margin-top: 20px;
   }
 
   .services .link_navigation {
