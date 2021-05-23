@@ -27,11 +27,6 @@ function Services() {
               <Stage data={item} key={index} />
             ))}
           </Breadcrumbs>
-          {/* <ul className='list services__list services__list_stage'>
-            {stage.map((item, index) => (
-              <Stage data={item} key={index} />
-            ))}
-          </ul> */}
         </div>
       </div>
     </section>

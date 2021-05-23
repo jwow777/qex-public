@@ -50,7 +50,6 @@
   font-weight: 300;
   font-size: 16px;
   line-height: 88.1%;
-  text-align: right;
   margin: 0;
 }
 
@@ -78,8 +77,16 @@
   grid-column-gap: 3px;
 }
 
-.our-service__version-block_beta {
+.our-service__icon-alpha_desktop {
+  display: flex;
+}
+
+.our-service__icon-alpha_mobile {
   display: none;
+}
+
+.our-service__version-block_beta {
+  display: grid;
 }
 
 @media screen and (max-width: 600px) {
@@ -147,6 +154,14 @@
     border-radius: 2px;
     font-size: 14px;
     line-height: 18px;
+  }
+
+  .our-service__icon-alpha_desktop {
+    display: none;
+  }
+
+  .our-service__icon-alpha_mobile {
+    display: flex;
   }
 
   .our-service__version-block_beta {

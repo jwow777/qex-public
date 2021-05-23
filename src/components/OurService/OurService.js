@@ -19,9 +19,9 @@ function OurService({ item, styles }) {
     container: {
       background: bgColor,
     },
-    // betablock: {
-    //   display:bl
-    // },
+    box: {
+      color: textColor,
+    },
     alpha: {
       color: colorAlpha,
       [theme.breakpoints.down('xs')]: {
@@ -37,70 +37,56 @@ function OurService({ item, styles }) {
   }));
 
   const classes = useStyles();
-  console.log(classes);
+
+  const alphaBlock = () => (
+    <div className='our-service__version-block our-service__version-block_alpha'>
+      <div className='our-service__icon-alpha our-service__icon-alpha_desktop'>
+        <svg viewBox="0 0 14 14" width='15' height='15' fill='none'>
+          <circle cx="6.5" cy="6.5" r="6.25" stroke={colorAlpha} strokeWidth=".5"/>
+          <circle cx="6.5" cy="6.5" r=".5" fill={colorAlpha}/>
+          <path stroke={colorAlpha} d="M6.5 1v1M6.5 11v1M1.5 6v1M11.498 6v1"/>
+          <path stroke={colorAlpha} strokeWidth=".5" d="M10.276 2.845l.329.377M2.2 9.547l.305.396M2.794 2.79l.361-.346M10.226 10.196l.33-.376"/>
+          <path fill={colorAlpha} d="M6.25 2.2h.5v4h-.5zM6.8 6.75l.004-.5 4 .026-.003.5z"/>
+        </svg>
+      </div>
+      <div className='our-service__icon-alpha our-service__icon-alpha_mobile'>
+        <svg viewBox="0 0 14 14" width='13' height='13' fill='none'>
+          <circle cx="6.5" cy="6.5" r="6.25" stroke={textColor} strokeWidth=".5"/>
+          <circle cx="6.5" cy="6.5" r=".5" fill={textColor}/>
+          <path stroke={textColor} d="M6.5 1v1M6.5 11v1M1.5 6v1M11.498 6v1"/>
+          <path stroke={textColor} strokeWidth=".5" d="M10.276 2.845l.329.377M2.2 9.547l.305.396M2.794 2.79l.361-.346M10.226 10.196l.33-.376"/>
+          <path fill={textColor} d="M6.25 2.2h.5v4h-.5zM6.8 6.75l.004-.5 4 .026-.003.5z"/>
+        </svg>
+      </div>
+      <span className={classes.alpha}>alpha</span>
+    </div>
+  );
+
+  const betaBlock = () => (
+    <div className='our-service__version-block our-service__version-block_beta'>
+      <span className={classes.beta}>beta</span>
+    </div>
+  );
+
   return (
     <li
       className={`${classes.container} our-service${styles ? ` our-service_${styles}` : ''}`}
     >
       {
         href
-          ? <a href={href} className='our-service__link' style={{ color: textColor }}>
+          ? <a href={href} className={`${classes.box} our-service__link`}>
               <img src={icon} alt={title} className='our-service__image' />
               <h3 className='our-service__title'>{title}</h3>
               <p className='our-service__about'>{subtitle}</p>
-              {alpha && (
-                <div className='our-service__version-block our-service__version-block_alpha'>
-                  <svg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <circle cx='7.31641' cy='6.5' r='6' stroke={classes.alpha.color}/>
-                    <circle cx='7.31641' cy='6.5' r='0.5' fill={classes.alpha.color}/>
-                    <line x1='7.31641' y1='1' x2='7.31641' y2='2' stroke={classes.alpha.color}/>
-                    <line x1='7.31641' y1='11' x2='7.31641' y2='12' stroke={classes.alpha.color}/>
-                    <line x1='2.31641' y1='6' x2='2.31641' y2='7' stroke={classes.alpha.color}/>
-                    <line x1='12.3164' y1='6' x2='12.3164' y2='7' stroke={classes.alpha.color}/>
-                    <line x1='11.0925' y1='2.84513' x2='11.4216' y2='3.22161' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <line x1='3.01429' y1='9.54717' x2='3.31986' y2='9.94292' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <line x1='3.61037' y1='2.78971' x2='3.97163' y2='2.44403' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <line x1='11.0445' y1='10.196' x2='11.3742' y2='9.82009' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <rect x='7.06641' y='2.19995' width='0.5' height='4' fill={classes.alpha.color}/>
-                    <rect x='7.61719' y='6.75' width='0.5' height='4' transform='rotate(-89.6185 7.61719 6.75)' fill={classes.alpha.color}/>
-                  </svg>
-                  <span className={classes.alpha}>alpha</span>
-                </div>
-              )}
-              {beta && (
-                <div className='our-service__version-block our-service__version-block_beta'>
-                  <span className={classes.beta}>beta</span>
-                </div>
-              )}
+              {alpha && alphaBlock()}
+              {beta && betaBlock()}
             </a>
-          : <div className='our-service__box' style={{ color: textColor }}>
+          : <div className={`${classes.box} our-service__box`}>
               <img src={icon} alt={title} className='our-service__image' />
               <h3 className='our-service__title'>{title}</h3>
               <p className='our-service__about'>{subtitle}</p>
-              {alpha && (
-                <div className='our-service__version-block our-service__version-block_alpha'>
-                  <svg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <circle cx='7.31641' cy='6.5' r='6' stroke={classes.alpha.color}/>
-                    <circle cx='7.31641' cy='6.5' r='0.5' fill={classes.alpha.color}/>
-                    <line x1='7.31641' y1='1' x2='7.31641' y2='2' stroke={classes.alpha.color}/>
-                    <line x1='7.31641' y1='11' x2='7.31641' y2='12' stroke={classes.alpha.color}/>
-                    <line x1='2.31641' y1='6' x2='2.31641' y2='7' stroke={classes.alpha.color}/>
-                    <line x1='12.3164' y1='6' x2='12.3164' y2='7' stroke={classes.alpha.color}/>
-                    <line x1='11.0925' y1='2.84513' x2='11.4216' y2='3.22161' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <line x1='3.01429' y1='9.54717' x2='3.31986' y2='9.94292' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <line x1='3.61037' y1='2.78971' x2='3.97163' y2='2.44403' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <line x1='11.0445' y1='10.196' x2='11.3742' y2='9.82009' stroke={classes.alpha.color} strokeWidth='0.5'/>
-                    <rect x='7.06641' y='2.19995' width='0.5' height='4' fill={classes.alpha.color}/>
-                    <rect x='7.61719' y='6.75' width='0.5' height='4' transform='rotate(-89.6185 7.61719 6.75)' fill={classes.alpha.color}/>
-                  </svg>
-                  <span className={classes.alpha}>alpha</span>
-                </div>
-              )}
-              {beta && (
-                <div className={`${classes.betablock} our-service__version-block our-service__version-block_beta`}>
-                  <span className={classes.beta}>beta</span>
-                </div>
-              )}
+              {alpha && alphaBlock()}
+              {beta && betaBlock()}
             </div>
       }
     </li>

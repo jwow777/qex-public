@@ -60,11 +60,30 @@
 
   .services__list_stage .MuiBreadcrumbs-ol {
     justify-content: center;
-    grid-row-gap: 25px;
   }
 
   .services__list_stage .MuiBreadcrumbs-li {
     width: calc((100% - 35px * 2) / 2);
+  }
+
+  .services__list_stage .MuiBreadcrumbs-li:nth-child(5) {
+    margin-top: 25px;
+  }
+
+  .services__list_stage .MuiBreadcrumbs-li:nth-child(6) {
+    margin-top: 25px;
+  }
+
+  .services__list_stage .MuiBreadcrumbs-li:nth-child(7) {
+    margin-top: 25px;
+  }
+
+  .services__list_stage .MuiBreadcrumbs-li:nth-child(8) {
+    margin-top: 25px;
+  }
+
+  .services__list_stage .MuiBreadcrumbs-li:nth-child(9) {
+    margin-top: 25px;
   }
 
   .services__list_stage .MuiBreadcrumbs-separator {
