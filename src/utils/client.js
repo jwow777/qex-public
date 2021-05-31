@@ -16,8 +16,8 @@ const client = [
     title: 'Авторские медиа',
   },
   {
-    link: '/images/client/microsoftazure.png',
-    title: 'Microsoft Azure',
+    link: '/images/client/quartzcapital.jpg',
+    title: 'Quartz Capital',
   },
   {
     link: '/images/client/tclg.png',

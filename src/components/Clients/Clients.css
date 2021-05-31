@@ -21,7 +21,7 @@
 .clients__image {
   justify-self: center;
   align-self: center;
-  padding: 30px 20px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 600px) {

@@ -74,7 +74,7 @@ function Contacts() {
               </ul>
               <ul className='list contacts__social-list'>
                 <li>
-                  <a href='http://instagram.com/qex_ru'>
+                  <a href='https://instagram.com/qex_ru'>
                     <img src={instagram} alt='Instagram' className='contacts__social-image'/>
                   </a>
                 </li>
@@ -113,6 +113,13 @@ function Contacts() {
                 <li className='contacts__map-text'>
                   <img src={locationImage} alt='Location' />
                   <span>142 W 57th St, NY 10019</span>
+                </li>
+              </ul>
+              <ul className='list contacts__social-list'>
+                <li>
+                  <a href='https://www.instagram.com/qex.us/'>
+                    <img src={instagram} alt='Instagram' className='contacts__social-image'/>
+                  </a>
                 </li>
               </ul>
             </div>

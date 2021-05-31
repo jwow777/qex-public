@@ -92,7 +92,7 @@
   }
 
   .header__block {
-    grid-template-columns: repeat(1, max-content);
+    grid-template-columns: repeat(2, max-content);
     grid-column-gap: 10px;
   }
 
