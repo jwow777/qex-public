@@ -47,9 +47,9 @@ function AboutUs() {
           <Reviewer data={review[activeStep + 1]}/>
         </ul>
         <MobileStepper
-          steps={maxSteps - 1}
+          steps={maxSteps}
           position="static"
-          variant="progress"
+          variant="dots"
           activeStep={activeStep}
           nextButton={
             <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 2} className={classes.button}>

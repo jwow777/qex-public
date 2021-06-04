@@ -64,4 +64,21 @@
   .link_aboutus {
     display: none;
   }
+
+  .MuiMobileStepper-dot {
+    width: 11px;
+    height: 11px;
+    background-color: #ccc;
+    box-sizing: border-box;
+    border: 1px solid #d7d7d7;
+  }
+
+  .MuiMobileStepper-dot.MuiMobileStepper-dotActive {
+    background-color: #8486EF;
+    border: 1px solid #8486EF;
+  }
+
+  .MuiMobileStepper-dot:nth-child(2n) {
+    display: none;
+  }
 }
