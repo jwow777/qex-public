@@ -4,19 +4,19 @@ const client = [
     title: 'Whitemark',
   },
   {
-    link: '/images/client/motobaza.png',
-    title: 'Motobaza',
+    link: '/images/client/prostor.png',
+    title: 'Простор',
   },
   {
-    link: '/images/client/mirlaog.png',
-    title: 'Мирлаог',
+    link: '/images/client/eurologistic.png',
+    title: 'Еврологистика',
   },
   {
     link: '/images/client/avtorskiemedia.png',
     title: 'Авторские медиа',
   },
   {
-    link: '/images/client/quartzcapital.jpg',
+    link: '/images/client/quartzcapital.png',
     title: 'Quartz Capital',
   },
   {
@@ -32,8 +32,8 @@ const client = [
     title: 'amoCRM',
   },
   {
-    link: '/images/client/googlecloud.png',
-    title: 'Google Cloud',
+    link: '/images/client/amniss.png',
+    title: 'Amniss',
   },
   {
     link: '/images/client/dentalfirst.png',
@@ -44,8 +44,8 @@ const client = [
     title: 'Госфинанс24',
   },
   {
-    link: '/images/client/prostor.png',
-    title: 'Простор',
+    link: '/images/client/motobaza.png',
+    title: 'Motobaza',
   },
   {
     link: '/images/client/inki.png',

@@ -39,7 +39,7 @@
   margin: 70px 0 45px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 960px) {
   .we {
     padding: 50px 20px;
   }

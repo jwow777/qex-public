@@ -10,6 +10,10 @@ const readyServices = [
     beta: true,
     clock: '',
     href: 'http://eris.bz/',
+    contentTitle: 'Генератор документов с гибкими шаблонами',
+    contentSubtitle: 'Создание и управление шаблонами, автораспознавание документов, удобное хранилище, интеграция с CRM',
+    desktop: '/images/ready/eris-computer.png',
+    mobile: '/images/ready/eris-mobile.png',
   },
   {
     title: 'Bbook',
@@ -30,6 +34,10 @@ const readyServices = [
     alpha: true,
     colorAlpha: '#679afd',
     href: 'http://vol.bz/',
+    contentTitle: 'Корпоративный мессенджер для эффективных команд',
+    contentSubtitle: 'Корпоративная рабочая область, удобные упоминания, обсуждения, чаты, расшифровка аудиосообщений',
+    desktop: '/images/ready/vol-computer.png',
+    mobile: '/images/ready/vol-mobile.png',
   },
   {
     title: 'Estraid',
@@ -41,6 +49,10 @@ const readyServices = [
     colorAlpha: '#1ee8d9',
     clock: '',
     href: 'http://estraid.com/',
+    contentTitle: 'Управление базой объектов для агентств недвижимости',
+    contentSubtitle: 'Управляйте проектами, объектами, застройщиками, созадавайте подборки для клиентов, удобная интеграция с CRM',
+    desktop: '/images/ready/estraid-computer.png',
+    mobile: '/images/ready/estraid-mobile.png',
   },
   {
     title: 'Tolp',

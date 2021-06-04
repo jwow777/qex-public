@@ -8,6 +8,7 @@
     "allowImportExportEverywhere": true
    },
    "rules": {
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "no-confusing-arrow": ["error", {"allowParens": true}]
   }
 }

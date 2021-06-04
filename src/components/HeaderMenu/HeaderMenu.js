@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  Button,
   Divider,
   IconButton,
   List,
@@ -34,9 +35,17 @@ const useStyles = makeStyles({
     flexDirection: 'column',
   },
   drawerHeader: {
-    height: 48,
+    height: 82,
     display: 'flex',
-    padding: '6px 4px',
+    alignItems: 'center',
+    padding: '0 4px',
+    '& .MuiIconButton-root': {
+      height: 46,
+      padding: 0,
+    },
+  },
+  swipeArrow: {
+    fontSize: 46,
   },
   listItem: {
     marginTop: 9,
@@ -52,9 +61,9 @@ const useStyles = makeStyles({
   },
   bottomBox: {
     width: '100%',
-    background: '#f1f1f1',
-    display: 'flex',
-    flexDirection: 'column',
+    backgroundColor: '#f1f1f1',
+    display: 'grid',
+    gridGap: 20,
     alignItems: 'center',
     marginTop: 'auto',
     boxSizing: 'border-box',
@@ -69,12 +78,37 @@ const useStyles = makeStyles({
     textDecoration: 'none',
     color: '#1c1c1c',
   },
+  buttonFeedBack: {
+    minHeight: 30,
+    backgroundColor: '#fff',
+    fontFamily: '"Inter", sans-serif',
+    fontWeight: 400,
+    fontSize: 16,
+    lineHeight: 1.2,
+    color: '#000',
+    textTransform: 'none',
+    borderRadius: 9,
+    '&:hover': {
+      backgroundColor: '#3e7bfa',
+      color: '#fff',
+    },
+  },
 });
 
-function HeaderMenu({ policy }) {
+function HeaderMenu({ onFeedback, policy }) {
   const classes = useStyles();
-  const [state, setState] = React.useState(false);
+  const [state, setState] = useState(false);
+  // Выбор языка
+  const [language, setLanguage] = useState(ru);
+  const [anchorElLang, setAnchorElLang] = useState(null);
+  const openLang = Boolean(anchorElLang);
 
+  const handleMenuLang = (e) => setAnchorElLang(e.currentTarget);
+  const handleCloseLang = (e) => {
+    setLanguage(e.target.lang || language);
+    setAnchorElLang(null);
+  };
+  // Боковое меню
   const toggleDrawer = (open) => (event) => {
     if (
       event
@@ -94,7 +128,7 @@ function HeaderMenu({ policy }) {
     >
       <div className={classes.drawerHeader}>
         <IconButton onClick={toggleDrawer(false)}>
-          <ChevronRight />
+          <ChevronRight className={classes.swipeArrow}/>
         </IconButton>
       </div>
       <Divider />
@@ -109,19 +143,20 @@ function HeaderMenu({ policy }) {
         <a href="tel:+74954899696" className={classes.phone}>
           +7 (495) 489-96-96
         </a>
+        <Button
+          variant="contained"
+          className={classes.buttonFeedBack}
+          onClick={onFeedback}
+        >
+          Оставить заявку
+        </Button>
+        <div className='header__lang-swipe-box' onClick={handleMenuLang}>
+          <img src={language} alt='language' className='header__lang-current-swipe-box'/>
+          <p className='header__lang-text'>{language === ru ? 'Русский' : 'English'}</p>
+        </div>
       </div>
     </div>
   );
-
-  const [language, setLanguage] = useState(ru);
-  const [anchorElLang, setAnchorElLang] = useState(null);
-  const openLang = Boolean(anchorElLang);
-
-  const handleMenuLang = (e) => setAnchorElLang(e.currentTarget);
-  const handleCloseLang = (e) => {
-    setLanguage(e.target.lang || language);
-    setAnchorElLang(null);
-  };
 
   return (
     <div className={`header__content header__content_top${policy ? ' header__content_policy' : ''}`}>

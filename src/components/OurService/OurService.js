@@ -2,7 +2,12 @@ import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import './OurService.css';
 
-function OurService({ item, styles }) {
+function OurService({
+  openPopup,
+  data,
+  item,
+  styles,
+}) {
   const {
     title,
     subtitle,
@@ -14,7 +19,6 @@ function OurService({ item, styles }) {
     beta,
     href,
   } = item;
-
   const useStyles = makeStyles((theme) => ({
     container: {
       background: bgColor,
@@ -35,9 +39,7 @@ function OurService({ item, styles }) {
       },
     },
   }));
-
   const classes = useStyles();
-
   const alphaBlock = () => (
     <div className='our-service__version-block our-service__version-block_alpha'>
       <div className='our-service__icon-alpha our-service__icon-alpha_desktop'>
@@ -61,26 +63,28 @@ function OurService({ item, styles }) {
       <span className={classes.alpha}>alpha</span>
     </div>
   );
-
   const betaBlock = () => (
     <div className='our-service__version-block our-service__version-block_beta'>
       <span className={classes.beta}>beta</span>
     </div>
   );
-
+  const handleClick = () => {
+    openPopup(true);
+    data(item);
+  };
   return (
     <li
       className={`${classes.container} our-service${styles ? ` our-service_${styles}` : ''}`}
     >
       {
         href
-          ? <a href={href} className={`${classes.box} our-service__link`}>
+          ? <div className={`${classes.box} our-service__link`} onClick={handleClick}>
               <img src={icon} alt={title} className='our-service__image' />
               <h3 className='our-service__title'>{title}</h3>
               <p className='our-service__about'>{subtitle}</p>
               {alpha && alphaBlock()}
               {beta && betaBlock()}
-            </a>
+            </div>
           : <div className={`${classes.box} our-service__box`}>
               <img src={icon} alt={title} className='our-service__image' />
               <h3 className='our-service__title'>{title}</h3>
