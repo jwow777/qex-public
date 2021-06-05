@@ -86,6 +86,10 @@
   width: 330px;
 }
 
+.formfeedback__date_unchange .MuiInputBase-root {
+  color: #8f90a6;
+}
+
 @media screen and (max-width: 600px) {
   .popup__feedback .MuiDialog-paperWidthSm {
     padding: 25px;

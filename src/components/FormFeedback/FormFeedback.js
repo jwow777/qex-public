@@ -10,7 +10,6 @@ import {
   makeStyles,
   MenuItem,
   Select,
-  Snackbar,
   TextField,
 } from '@material-ui/core';
 import {
@@ -27,7 +26,6 @@ import {
   TimePicker,
 } from '@material-ui/pickers';
 import clsx from 'clsx';
-import MuiAlert from '@material-ui/lab/Alert';
 import DateFnsUtils from '@date-io/date-fns';
 import ru from 'date-fns/locale/ru';
 import PhoneInput from 'react-phone-input-2';
@@ -210,7 +208,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FormFeedback({ openPolicy }) {
+function FormFeedback({ openPolicy, openSuccess }) {
   const classes = useStyles();
   const [state, setState] = useState({
     communication: 'call',
@@ -224,15 +222,28 @@ function FormFeedback({ openPolicy }) {
     localDate: new Date(),
     date: new Date(),
   });
-  console.log(state);
+  const twoNumber = (num) => (num < 10 ? '0' + num : num);
   const handleDate = (date) => {
-    const twoNumber = (num) => (num < 10 ? '0' + num : num);
     const timezone = (num) => (num < 0 ? num : '+' + num);
 
     return `${twoNumber(date.getDate())}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(date.getHours())}:${twoNumber(date.getMinutes())} UTC: ${timezone(date.getTimezoneOffset() / -60)}`;
   };
-
-  const [openSuccess, setOpenSuccess] = useState(false);
+  const handleChosenDate = (date) => {
+    const differenceTime = (num) => {
+      const timezoneClient = date.getTimezoneOffset() / -60;
+      return num + timezoneClient * (-1) + 3;
+    };
+    let day = date.getDate();
+    let hours = differenceTime(date.getHours());
+    if (hours > 23) {
+      day += 1;
+      hours -= 24;
+    } else if (hours < 0) {
+      day -= 1;
+      hours += 24;
+    }
+    return `${twoNumber(day)}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(hours)}:${twoNumber(date.getMinutes())}`;
+  };
 
   const [selectedDate, setSelectedDate] = useState(new Date());
   const handleChangeDate = (date) => {
@@ -252,13 +263,6 @@ function FormFeedback({ openPolicy }) {
     });
   };
 
-  const handleCloseSuccess = (reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setOpenSuccess(false);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     return fetch('https://qex.team/connector.php', {
@@ -269,6 +273,7 @@ function FormFeedback({ openPolicy }) {
       body: JSON.stringify({
         action: 'app_form',
         body: {
+          form_id: 1,
           communication: state.communication,
           phone: state.phone,
           country: state.country,
@@ -278,13 +283,25 @@ function FormFeedback({ openPolicy }) {
           company: state.company,
           task: state.task,
           localDate: handleDate(state.localDate),
-          chosenDate: handleDate(state.date),
+          chosenDate: JSON.stringify(state.localDate) === JSON.stringify(state.date) ? 'Не выбрана дата' : handleChosenDate(state.date),
           policy: true,
         },
       }),
     }).then((res) => {
       if (res.ok) {
-        setOpenSuccess(true);
+        openSuccess();
+        setState({
+          communication: 'call',
+          phone: '',
+          country: {},
+          email: '',
+          firstName: '',
+          company: '',
+          task: '',
+          policy: true,
+          localDate: new Date(),
+          date: new Date(),
+        });
         return res.json();
       }
       // eslint-disable-next-line prefer-promise-reject-errors
@@ -421,7 +438,7 @@ function FormFeedback({ openPolicy }) {
             minutesStep={5}
             size='small'
             onChange={handleChangeDate}
-            className={classes.time}
+            className={`${classes.time}${JSON.stringify(state.localDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
           />
           <DatePicker
             autoOk
@@ -445,26 +462,18 @@ function FormFeedback({ openPolicy }) {
             value={selectedDate}
             size='small'
             onChange={handleChangeDate}
-            className={classes.date}
+            className={`${classes.date}${JSON.stringify(state.localDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
           />
         </MuiPickersUtilsProvider>
         <Button
           type='submit'
           variant='contained'
           className={classes.submit}
-          disabled={!(state.email || state.phone) || !state.policy}
+          disabled={!(state.email || state.phone) || !state.policy || state.localDate > state.date}
         >
           Отправить
         </Button>
       </div>
-      <Snackbar anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'right',
-      }} open={openSuccess} autoHideDuration={3000} onClose={handleCloseSuccess}>
-        <MuiAlert elevation={6} variant='filled' severity='success' onClose={handleCloseSuccess}>
-          Заявка уже в нашей CRM, мы скоро с вами свяжемся :)
-        </MuiAlert>
-      </Snackbar>
     </FormControl>
   );
 }

@@ -1,17 +1,18 @@
 .feedback {
   border-bottom: 1px solid #dedede;
-  padding: 60px 20px;
+  padding: 60px 100px;
 }
 
 .feedback__container {
   max-width: 1260px;
   display: grid;
-  grid-template-columns: calc(40% - 15px) 60%;
+  grid-template-columns: calc(45% - 15px) 55%;
   grid-gap: 40px 15px;
   margin: auto;
 }
 
 .feedback__image {
+  justify-self: center;
   display: block;
   grid-row: 1/4;
   width: 100%;
@@ -27,22 +28,28 @@
 .feedback__title {
   grid-column: 2;
   align-self: center;
-  font-family: "Yanone Kaffeesatz", sans-serif;
-  font-weight: 300;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
   font-size: 40px;
   line-height: 1.2;
   letter-spacing: 0.01em;
   margin: 0;
 }
 
+.feedback__title_red,
+.feedback .input:hover {
+  color: #ff374f;
+  margin: 0;
+}
+
 .feedback__subtitle {
   grid-column: 2;
+  max-width: 520px;
   align-self: center;
-  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.2;
-  letter-spacing: -0.035em;
   margin: 0;
 }
 
@@ -55,7 +62,7 @@
 .feedback__submit-site {
   width: auto;
   min-height: 40px;
-  background-color: #6875EF;
+  background-color: #ff374f;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -70,16 +77,16 @@
 }
 
 .feedback__submit-site:hover {
-  background-color: #3E7BFA;
+  background-color: #fd5266;
 }
 
 .feedback__submit-site:disabled {
-  background-color: #6875EF;
+  background-color: #cf2b3e;
   color: #fff;
 }
 
 .feedback__submit-site:disabled:hover {
-  background-color: #3E7BFA;
+  background-color: #cf2b3e;
 }
 
 .feedback__extra-input {
@@ -162,9 +169,17 @@
   height: 27px;
 }
 
+.feedback__form .feedback__phone-block:hover {
+  border: 1px solid #ff374f;
+}
+
 @media screen and (max-width: 960px) {
+  .feedback {
+    padding: 50px 20px;
+  }
+
   .feedback__container {
-    grid-gap: 30px 15px;
+    grid-gap: 20px 15px;
   }
 
   .feedback__form_extra {
@@ -178,27 +193,20 @@
 }
 
 @media screen and (max-width: 600px) {
-  .feedback {
-    padding: 50px 20px;
-  }
-
   .feedback__container {
-    grid-template-columns: calc(50% - 15px) 50%;
+    grid-template-columns: calc(44% - 15px) 56%;
   }
 
   .feedback__title {
-    grid-column: 1/3;
-    grid-row: 1;
-    font-weight: 400;
-    font-size: 26px;
+    font-size: 18px;
   }
 
   .feedback__subtitle {
-    font-size: 35px;
+    font-size: 16px;
   }
 
   .feedback__image {
-    grid-row: 2;
+    grid-row: 1/3;
   }
 
   .feedback__form_extra {

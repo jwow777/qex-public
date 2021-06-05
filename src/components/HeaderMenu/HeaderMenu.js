@@ -13,7 +13,7 @@ import {
   Popover,
   SwipeableDrawer,
 } from '@material-ui/core';
-import { ChevronRight, Menu } from '@material-ui/icons';
+import { Call, ChevronRight, Menu } from '@material-ui/icons';
 import clsx from 'clsx';
 import './HeaderMenu.css';
 
@@ -165,7 +165,8 @@ function HeaderMenu({ onFeedback, policy }) {
       </Link>
       <div className='header__block'>
         <a href='tel:+74954899696' className='link header__phone'>
-          +7 (495) 489-96-96
+          <Call fontSize='large'/>
+          <p className='header__phone-text'>+7 (495) 489-96-96</p>
         </a>
         <img src={language} alt='language' className='header__lang-current' onClick={handleMenuLang}/>
         <Popover

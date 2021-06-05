@@ -13,7 +13,7 @@ const readyServices = [
     contentTitle: 'Генератор документов с гибкими шаблонами',
     contentSubtitle: 'Создание и управление шаблонами, автораспознавание документов, удобное хранилище, интеграция с CRM',
     desktop: '/images/ready/eris-computer.png',
-    mobile: '/images/ready/eris-mobile.png',
+    mobile: '/images/ready/eris-mobile.svg',
   },
   {
     title: 'Bbook',
@@ -37,7 +37,7 @@ const readyServices = [
     contentTitle: 'Корпоративный мессенджер для эффективных команд',
     contentSubtitle: 'Корпоративная рабочая область, удобные упоминания, обсуждения, чаты, расшифровка аудиосообщений',
     desktop: '/images/ready/vol-computer.png',
-    mobile: '/images/ready/vol-mobile.png',
+    mobile: '/images/ready/vol-mobile.svg',
   },
   {
     title: 'Estraid',
@@ -52,7 +52,7 @@ const readyServices = [
     contentTitle: 'Управление базой объектов для агентств недвижимости',
     contentSubtitle: 'Управляйте проектами, объектами, застройщиками, созадавайте подборки для клиентов, удобная интеграция с CRM',
     desktop: '/images/ready/estraid-computer.png',
-    mobile: '/images/ready/estraid-mobile.png',
+    mobile: '/images/ready/estraid-mobile.svg',
   },
   {
     title: 'Tolp',

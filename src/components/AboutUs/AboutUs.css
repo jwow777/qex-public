@@ -49,8 +49,7 @@
   }
   
   .aboutus__list {
-    grid-template-columns: 1fr;
-    grid-gap: 30px 10px;
+    grid-gap: 0;
   }
 
   .aboutus__list_desktop {
@@ -58,7 +57,10 @@
   }
 
   .aboutus__list_mobile {
-    display: grid;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .link_aboutus {
@@ -80,5 +82,17 @@
 
   .MuiMobileStepper-dot:nth-child(2n) {
     display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .aboutus__list_mobile {
+    min-height: 560px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .aboutus__list_mobile {
+    min-height: 620px;
   }
 }

@@ -15,6 +15,7 @@ function Main(
     onReadyServices,
     dataService,
     openPolicy,
+    openSuccess,
   },
 ) {
   return (
@@ -25,7 +26,7 @@ function Main(
       <Clients />
       <We />
       <AboutUs />
-      <Feedback openPolicy={openPolicy}/>
+      <Feedback openPolicy={openPolicy} openSuccess={openSuccess}/>
       <Contacts />
     </main>
   );

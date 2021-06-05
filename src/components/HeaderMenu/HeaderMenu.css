@@ -22,10 +22,16 @@
 }
 
 .header__phone {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 19px;
   line-height: 23px;
   color: #fff;
+}
+
+.header__phone-text {
+  margin: 0;
 }
 
 .header__lang-current {
@@ -71,7 +77,7 @@
   margin-right: 5px;
 }
 
-@media screen and (max-width: 1045px) {
+@media screen and (max-width: 1065px) {
   .header__phone {
     color: #000;
   }
@@ -83,8 +89,8 @@
   }
 
   .header__lang-current {
-    width: 40px;
-    height: 25px;
+    width: 50px;
+    height: 30px;
   }
 
   .menu {
@@ -92,11 +98,15 @@
   }
 
   .header__block {
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(3, max-content);
     grid-column-gap: 10px;
   }
 
   .header__phone {
+    color: #e2e2e2;
+  }
+
+  .header__phone-text {
     display: none;
   }
 
@@ -126,8 +136,8 @@
   }
 
   .header__menu-button-mobile.MuiIconButton-root .MuiSvgIcon-root {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   .header__lang-swipe-box {

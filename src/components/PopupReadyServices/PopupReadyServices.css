@@ -34,6 +34,9 @@
 
 .popup__ready-services-image-mobile {
   position: absolute;
+  width: 100%;
+  max-width: 165px;
+  max-height: 165px;
   top: 65px;
   left: 120px;
 }
@@ -71,8 +74,6 @@
 
   .popup__ready-services-image-mobile {
     position: static;
-    max-width: 165px;
-    max-height: 165px;
   }
 
   .popup__ready-services-title {
