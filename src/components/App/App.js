@@ -13,6 +13,7 @@ import NotFound from '../NotFound/NotFound';
 
 import Footer from '../Footer/Footer';
 import HeaderMenu from '../HeaderMenu/HeaderMenu';
+import PopupSuccess from '../PopupSuccess/PopupSuccess';
 
 const PopupFeedback = lazy(() => import('../PopupFeedback/PopupFeedback'));
 const PopupReadyServices = lazy(() => import('../PopupReadyServices/PopupReadyServices'));
@@ -32,6 +33,10 @@ function App() {
   const handleClickOpenPolicy = () => () => setOpenPolicy(true);
   const handleClosePolicy = () => setOpenPolicy(false);
 
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const handleClickOpenSuccess = () => setOpenSuccess(true);
+  const handleCloseSuccess = () => setOpenSuccess(false);
+
   return (
     <>
       <Switch>
@@ -48,9 +53,11 @@ function App() {
               onReadyServices={handleClickOpenReadyServices}
               dataService={setReadyServiceData}
               openPolicy={handleClickOpenPolicy}
+              openSuccess={handleClickOpenSuccess}
             />
             <PopupFeedback
               openPolicy={handleClickOpenPolicy}
+              openSuccess={handleClickOpenSuccess}
               open={openFeedback}
               close={handleCloseFeedback}
             />
@@ -60,6 +67,7 @@ function App() {
               data={readyServiceData}
             />
             <PopupPolicy open={openPolicy} close={handleClosePolicy}/>
+            <PopupSuccess open={openSuccess} close={handleCloseSuccess}/>
           </Suspense>
           <Footer/>
         </Route>

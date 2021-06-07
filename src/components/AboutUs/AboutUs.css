@@ -15,23 +15,84 @@
 }
 
 .aboutus__list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   grid-gap: 30px 10px;
+}
+
+.aboutus__list_desktop {
+  display: grid;
+}
+
+.aboutus__list_mobile {
+  display: none;
+}
+
+.link_hidden {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
   .aboutus {
-    background-color: rgba(227, 227, 227, 0.2);
-    padding: 30px 20px;
+    background-color: hsla(0,0%,89%,.2);
+    padding: 50px 20px;
   }
-
+  
+  .aboutus__container {
+    max-width: 1260px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+  
   .aboutus__title {
     margin: 0 0 40px;
   }
-
+  
   .aboutus__list {
-    grid-template-columns: 1fr;
-    grid-gap: 30px 10px;
+    grid-gap: 0;
+  }
+
+  .aboutus__list_desktop {
+    display: none;
+  }
+
+  .aboutus__list_mobile {
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .link_aboutus {
+    display: none;
+  }
+
+  .MuiMobileStepper-dot {
+    width: 11px;
+    height: 11px;
+    background-color: #ccc;
+    box-sizing: border-box;
+    border: 1px solid #d7d7d7;
+  }
+
+  .MuiMobileStepper-dot.MuiMobileStepper-dotActive {
+    background-color: #8486EF;
+    border: 1px solid #8486EF;
+  }
+
+  .MuiMobileStepper-dot:nth-child(2n) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .aboutus__list_mobile {
+    min-height: 560px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .aboutus__list_mobile {
+    min-height: 620px;
   }
 }

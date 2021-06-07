@@ -1,11 +1,11 @@
 .clients {
   border-bottom: 1px solid #dedede;
-  padding: 0 20px;
+  padding: 60px 20px;
 }
 
 .clients__container {
   max-width: 1260px;
-  margin: 60px auto 30px;
+  margin: auto;
 }
 
 .clients__title {
@@ -25,6 +25,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .clients {
+    padding: 50px 20px;
+  }
+
   .clients__list {
     display: grid;
     grid-template-columns: repeat(8, 1fr);

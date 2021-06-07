@@ -28,6 +28,7 @@
 
 .link {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .link_navigation {
@@ -40,13 +41,6 @@
   line-height: 34px;
   color: #2d2d2d;
   margin: 50px 0 0;
-}
-
-.link_navigation::after {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 24px;
 }
 
 .title {

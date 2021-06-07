@@ -1,9 +1,9 @@
 .reviewer {
-  background-color: rgba(227, 227, 227, 0.2);
+  background-color: hsla(0,0%,89%,.2);
   max-width: 630px;
   max-height: 400px;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2,auto);
   grid-template-rows: max-content;
   grid-gap: 20px 35px;
   box-sizing: border-box;
@@ -12,9 +12,19 @@
   border-radius: 6px;
 }
 
+.reviewer:nth-child(5),
+.reviewer:nth-child(6) {
+  display: none;
+}
+
+.reviewer:nth-child(5).reviewer_visible,
+.reviewer:nth-child(6).reviewer_visible {
+  display: grid;
+}
+
 .reviewer_popup {
   background-color: #fff;
-  width: calc((100vw - 55px) / 2);
+  width: calc(50vw - 27.5px);
   padding-bottom: 0;
 }
 
@@ -67,6 +77,7 @@
 }
 
 .reviewer__text {
+  grid-column: 1/3;
   grid-row: 2;
   font-weight: 300;
   font-size: 16px;
@@ -96,10 +107,11 @@
 }
 
 .reviewer__document-block {
-  grid-row: 1/3;
+  grid-row: 1;
+  grid-column: 2;
   justify-self: end;
-  width: 120px;
-  height: 150px;
+  width: 100px;
+  height: 70px;
   border: 0.5px solid #dbdbdb;
   box-sizing: border-box;
   border-radius: 3px;
@@ -110,6 +122,7 @@
   grid-column: 2;
   width: 200px;
   height: 70px;
+  display: -webkit-flex;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -117,7 +130,7 @@
 .reviewer__letter-image {
   display: block;
   width: 100%;
-  height: 100px;
+  height: 37px;
   object-fit: cover;
   object-position: top;
 }
@@ -133,7 +146,7 @@
   line-height: 12px;
   box-sizing: border-box;
   border-top: 0.5px solid #dbdbdb;
-  padding: 7px;
+  padding: 3px 5px;
 }
 
 .reviewer__letter-name_popup {
@@ -203,7 +216,7 @@
 }
 
 .review__extra-text {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 200;
   font-size: 15px;
@@ -220,26 +233,25 @@
 
 @media screen and (max-width: 600px) {
   .reviewer {
-    background-color: rgba(227, 227, 227, 0);
+    background-color: hsla(0,0%,89%,0);
     grid-gap: 20px;
-    padding: 0px;
+    padding: 0;
+  }
+  
+  .reviewer:nth-child(5),
+  .reviewer:nth-child(6) {
+    display: grid;
   }
 
   .reviewer_popup {
     background-color: #fff;
     width: calc(100vw - 40px);
     grid-gap: 10px;
-    padding: 10px;
-    padding-bottom: 0;
+    padding: 10px 10px 0;
   }
-
+    
   .reviewer__block {
     grid-column-gap: 10px;
-  }
-
-  .reviewer__letter-modal-image {
-    max-width: 90vw;
-    max-height: 90vh;
   }
 
   .reviewer__document-block {
@@ -259,20 +271,27 @@
     height: 37px;
   }
 
+  .reviewer__letter-modal-image {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+
   .reviewer__letter-name {
     padding: 3px 5px;
   }
 
   .reviewer__letter-name_popup {
     font-size: 8px;
-    border-top: 0.5px solid #dbdbdb;
+    border-top: .5px solid #dbdbdb;
   }
-
+  
   .reviewer__text {
     grid-row: 2;
     grid-column: 1/3;
+    margin-right: -10px;
+    padding-right: 5px;
   }
-
+  
   .review__extra {
     background: #f7f7f7;
   }

@@ -3,9 +3,9 @@ import React from 'react';
 import './OurService.css';
 
 function OurService({
-  item,
   openPopup,
   data,
+  item,
   styles,
 }) {
   const {
@@ -19,7 +19,6 @@ function OurService({
     beta,
     href,
   } = item;
-
   const useStyles = makeStyles((theme) => ({
     container: {
       background: bgColor,
@@ -41,14 +40,6 @@ function OurService({
     },
   }));
   const classes = useStyles();
-
-  const handleClick = () => {
-    if (!styles) {
-      data(item);
-      openPopup();
-    }
-  };
-
   const alphaBlock = () => (
     <div className='our-service__version-block our-service__version-block_alpha'>
       <div className='our-service__icon-alpha our-service__icon-alpha_desktop'>
@@ -72,13 +63,15 @@ function OurService({
       <span className={classes.alpha}>alpha</span>
     </div>
   );
-
   const betaBlock = () => (
     <div className='our-service__version-block our-service__version-block_beta'>
       <span className={classes.beta}>beta</span>
     </div>
   );
-
+  const handleClick = () => {
+    openPopup(true);
+    data(item);
+  };
   return (
     <li
       className={`${classes.container} our-service${styles ? ` our-service_${styles}` : ''}`}

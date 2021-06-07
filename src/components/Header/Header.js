@@ -15,7 +15,7 @@ function Header({ onFeedback }) {
       style={{ backgroundImage: `url(${background})` }}
     >
       <div className='header__container'>
-        <HeaderMenu/>
+        <HeaderMenu onFeedback={onFeedback}/>
         <div className='header__content header__content_middle'>
           <h1 className='header__title'>
             Разработка готовых решений автоматизации

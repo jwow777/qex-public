@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import './Reviewer.css';
 import {
   Fade,
   Modal,
   Popover,
 } from '@material-ui/core';
 import Backdrop from '@material-ui/core/Backdrop';
-// import letterI from '../../images/aboutus/letter.png';
+import './Reviewer.css';
 
-function Reviewer({ data }) {
+function Reviewer({ data, extra }) {
   const {
     name,
     company,
@@ -46,7 +45,7 @@ function Reviewer({ data }) {
 
   return (
     <>
-      <li className='reviewer'>
+      <li className={`reviewer${extra ? ' reviewer_visible' : ''}`}>
         <div className='reviewer__block'>
           <img src={photo} alt={name} className='reviewer__photo' />
           <h3 className='reviewer__name'>{name}</h3>
@@ -64,7 +63,11 @@ function Reviewer({ data }) {
           </div>
           <p className='reviewer__position'>{position}</p>
         </div>
-        <p className='reviewer__text' onClick={handlePopoverOpen}>{sizeReview(review)}</p>
+        <p className='reviewer__text' onClick={handlePopoverOpen}>
+          {
+            sizeReview(review)
+          }
+        </p>
         {
           letter
             ? <div className='reviewer__document-block' onClick={handleOpenLetter}>

@@ -4,7 +4,12 @@ import Popup from '../Popup/Popup';
 import FormFeedback from '../FormFeedback/FormFeedback';
 import './PopupFeedback.css';
 
-function PopupFeedback({ open, close, openPolicy }) {
+function PopupFeedback({
+  open,
+  close,
+  openPolicy,
+  openSuccess,
+}) {
   return (
     <Popup
       open={open}
@@ -18,7 +23,7 @@ function PopupFeedback({ open, close, openPolicy }) {
       >
         Обратная связь
       </Typography>
-      <FormFeedback openPolicy={openPolicy}/>
+      <FormFeedback openPolicy={openPolicy} openSuccess={openSuccess}/>
     </Popup>
   );
 }

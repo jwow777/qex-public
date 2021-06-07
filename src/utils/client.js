@@ -8,7 +8,7 @@ const client = [
     title: 'Простор',
   },
   {
-    link: '/images/client/eurologistica.png',
+    link: '/images/client/eurologistic.png',
     title: 'Еврологистика',
   },
   {

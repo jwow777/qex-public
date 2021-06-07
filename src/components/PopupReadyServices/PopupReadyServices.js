@@ -7,52 +7,48 @@ import './PopupReadyServices.css';
 function PopupReadyServices({ open, close, data }) {
   const useStyles = makeStyles((theme) => ({
     headerBox: {
-      minHeight: 90,
-      backgroundColor: data.bgColor,
       display: 'grid',
-      gridTemplateColumns: 'repeat(2, max-content)',
-      justifyContent: 'center',
-      alignItems: 'center',
       gridGap: 10,
+      minHeight: 90,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: data.bgColor,
+      gridTemplateColumns: 'repeat(2, max-content)',
     },
-    headerImage: {
-      maxWidth: 50,
-      maxHeight: 50,
-    },
-    headerTitle: {
-      fontFamily: 'Yantramanav',
-      fontStyle: 'normal',
-      fontWeight: 300,
-      fontSize: 45,
-      lineHeight: 1.2,
+    title: {
       color: data.textColor,
       margin: 0,
+      fontSize: 45,
+      fontStyle: 'normal',
+      fontFamily: 'Yantramanav',
+      fontWeight: 300,
+      lineHeight: 1.2,
     },
     link: {
+      color: data.bgColor,
       width: 'fit-content',
       height: 'fit-content',
       display: 'flex',
-      alignItems: 'center',
-      marginTop: 'auto',
-      marginLeft: 'auto',
-      fontFamily: 'Inter',
-      fontStyle: 'normal',
-      fontWeight: 400,
       fontSize: 25,
-      lineHeight: 1.2,
-      color: data.bgColor,
-      textDecoration: 'none',
+      fontStyle: 'normal',
+      marginTop: 'auto',
       textAlign: 'right',
-      '& svg': {
-        marginTop: 3,
-      },
+      alignItems: 'center',
+      fontFamily: 'Inter',
+      fontWeight: 400,
+      lineHeight: 1.2,
+      marginLeft: 'auto',
+      textDecoration: 'none',
       [theme.breakpoints.down('xs')]: {
         fontSize: 18,
         marginTop: 0,
         marginLeft: 0,
-        '& svg': {
-          fontSize: '1rem',
-        },
+      },
+    },
+    arrow: {
+      marginTop: 2,
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 18,
       },
     },
   }));
@@ -65,18 +61,18 @@ function PopupReadyServices({ open, close, data }) {
     >
       <div>
         <div className={classes.headerBox}>
-          <img src={data.icon} alt={data.title} className={classes.headerImage}/>
-          <p className={classes.headerTitle}>{data.title}</p>
+          <img src={data.icon} alt={data.title} />
+          <h2 className={classes.title}>{data.title}</h2>
         </div>
         <div className='popup__ready-services-content-box'>
           <div className='popup__ready-services-image-box'>
-            <img src={data.desktopImage} alt={data.title} className='popup__ready-services-image-computer'/>
-            <img src={data.mobileImage} alt={data.title} className='popup__ready-services-image-mobile'/>
+            <img src={data.desktop} className='popup__ready-services-image-computer'/>
+            <img src={data.mobile} className='popup__ready-services-image-mobile'/>
           </div>
-          <h2 className='popup__ready-services-title'>{data.descriptionTitle}</h2>
-          <p className='popup__ready-services-subtitle'>{data.descriptionSubtitle}</p>
+          <h3 className='popup__ready-services-title'>{data.contentTitle}</h3>
+          <p className='popup__ready-services-subtitle'>{data.contentSubtitle}</p>
           <a href={data.href} className={classes.link}>
-            На сайт продукта <ArrowForwardIos/>
+            На сайт продукта <ArrowForwardIos className={classes.arrow}/>
           </a>
         </div>
       </div>
