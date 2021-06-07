@@ -15,12 +15,18 @@ import Footer from '../Footer/Footer';
 import HeaderMenu from '../HeaderMenu/HeaderMenu';
 
 const PopupFeedback = lazy(() => import('../PopupFeedback/PopupFeedback'));
+const PopupReadyServices = lazy(() => import('../PopupReadyServices/PopupReadyServices'));
 const PopupPolicy = lazy(() => import('../PopupPolicy/PopupPolicy'));
 
 function App() {
   const [openFeedback, setOpenFeedback] = useState(false);
   const handleClickOpenFeedback = () => setOpenFeedback(true);
   const handleCloseFeedback = () => setOpenFeedback(false);
+
+  const [openReadyServices, setOpenReadyServices] = useState(false);
+  const [readyServiceData, setReadyServiceData] = useState({});
+  const handleClickOpenReadyServices = () => setOpenReadyServices(true);
+  const handleCloseReadyServices = () => setOpenReadyServices(false);
 
   const [openPolicy, setOpenPolicy] = useState(false);
   const handleClickOpenPolicy = () => () => setOpenPolicy(true);
@@ -39,12 +45,19 @@ function App() {
             }
           >
             <Main
+              onReadyServices={handleClickOpenReadyServices}
+              dataService={setReadyServiceData}
               openPolicy={handleClickOpenPolicy}
             />
             <PopupFeedback
               openPolicy={handleClickOpenPolicy}
               open={openFeedback}
               close={handleCloseFeedback}
+            />
+            <PopupReadyServices
+              open={openReadyServices}
+              close={handleCloseReadyServices}
+              data={readyServiceData}
             />
             <PopupPolicy open={openPolicy} close={handleClosePolicy}/>
           </Suspense>

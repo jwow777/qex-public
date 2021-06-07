@@ -1,0 +1,37 @@
+.aboutus {
+  border-bottom: 1px solid #dedede;
+  padding: 60px 20px;
+}
+
+.aboutus__container {
+  max-width: 1260px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.aboutus__title {
+  margin: 0 0 60px;
+}
+
+.aboutus__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .aboutus {
+    background-color: rgba(227, 227, 227, 0.2);
+    padding: 30px 20px;
+  }
+
+  .aboutus__title {
+    margin: 0 0 40px;
+  }
+
+  .aboutus__list {
+    grid-template-columns: 1fr;
+    grid-gap: 30px 10px;
+  }
+}

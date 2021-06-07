@@ -73,7 +73,7 @@ const useStyles = makeStyles({
 
 function HeaderMenu({ policy }) {
   const classes = useStyles();
-  const [state, setState] = React.useState(false);
+  const [state, setState] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
     if (
