@@ -54,12 +54,14 @@ function App() {
               dataService={setReadyServiceData}
               openPolicy={handleClickOpenPolicy}
               openSuccess={handleClickOpenSuccess}
+              closeSuccess={handleCloseSuccess}
             />
             <PopupFeedback
               openPolicy={handleClickOpenPolicy}
               openSuccess={handleClickOpenSuccess}
               open={openFeedback}
               close={handleCloseFeedback}
+              closeSuccess={handleCloseSuccess}
             />
             <PopupReadyServices
               open={openReadyServices}

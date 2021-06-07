@@ -28,9 +28,10 @@ function Reviewer({ data, extra }) {
   const open = Boolean(anchorEl);
 
   const sizeReview = (rev) => {
-    const lengthReview = rev.split(' ').slice(0, 50).length;
-    const cutReview = rev.split(' ').slice(0, 50).join(' ');
-    if (lengthReview < 50) {
+    const maxWords = 50;
+    const lengthReview = rev.split(' ').slice(0, maxWords).length;
+    const cutReview = rev.split(' ').slice(0, maxWords).join(' ');
+    if (lengthReview < maxWords) {
       return rev;
     }
     return (
@@ -42,7 +43,6 @@ function Reviewer({ data, extra }) {
       </>
     );
   };
-
   return (
     <>
       <li className={`reviewer${extra ? ' reviewer_visible' : ''}`}>
@@ -55,11 +55,13 @@ function Reviewer({ data, extra }) {
                 ? <img src={company} alt='Компания' className='reviewer__company-image'/>
                 : <p className='reviewer__company-title'>{company}</p>
             }
-            {
-              companyCountry
-                ? <img src={companyCountry} alt='Страна'/>
-                : ''
-            }
+            <div className='reviewer__company-country-box'>
+              {
+                companyCountry
+                  ? companyCountry.map((item, index) => <img src={item} alt='Страна' className='reviewer__company-country-image' key={index}/>)
+                  : ''
+              }
+            </div>
           </div>
           <p className='reviewer__position'>{position}</p>
         </div>

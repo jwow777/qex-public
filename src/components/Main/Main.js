@@ -16,6 +16,7 @@ function Main(
     dataService,
     openPolicy,
     openSuccess,
+    closeSuccess,
   },
 ) {
   return (
@@ -26,7 +27,7 @@ function Main(
       <Clients />
       <We />
       <AboutUs />
-      <Feedback openPolicy={openPolicy} openSuccess={openSuccess}/>
+      <Feedback openPolicy={openPolicy} openSuccess={openSuccess} closeSuccess={closeSuccess}/>
       <Contacts />
     </main>
   );

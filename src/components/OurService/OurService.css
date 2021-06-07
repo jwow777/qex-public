@@ -38,7 +38,7 @@
   font-family: "Yantramanav", sans-serif;
   font-weight: 300;
   font-size: 40px;
-  line-height: 40px;
+  line-height: 1;
   margin: 0;
   align-self: flex-end;
 }
@@ -50,7 +50,7 @@
   justify-self: flex-start;
   font-weight: 300;
   font-size: 16px;
-  line-height: 88.1%;
+  line-height: 85%;
   margin: 0;
 }
 
@@ -70,7 +70,7 @@
   font-family: "Yantramanav", sans-serif;
   font-weight: 300;
   font-size: 20px;
-  line-height: 22px;
+  line-height: 1.2;
 }
 
 .our-service__version-block_alpha {
@@ -127,22 +127,19 @@
 
   .our-service__title {
     font-size: 26px;
-    line-height: 22px;
   }
 
   .our-service__title_popup {
     font-size: 38px;
-    line-height: 38px;
   }
 
   .our-service__about {
     font-size: 11px;
-    line-height: 11px;
+    line-height: 1;
   }
 
   .our-service__about_popup {
     font-size: 15px;
-    line-height: 15px;
   }
 
   .our-service__version-block {
@@ -154,7 +151,6 @@
     padding: 0 6px;
     border-radius: 2px;
     font-size: 14px;
-    line-height: 18px;
   }
 
   .our-service__icon-alpha_desktop {
@@ -172,5 +168,11 @@
   .our-service__version-block_popup {
     bottom: 5px;
     right: 5px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .our-service__about {
+    font-size: 10px;
   }
 }

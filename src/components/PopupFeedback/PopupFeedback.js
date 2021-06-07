@@ -9,6 +9,7 @@ function PopupFeedback({
   close,
   openPolicy,
   openSuccess,
+  closeSuccess,
 }) {
   return (
     <Popup
@@ -23,7 +24,12 @@ function PopupFeedback({
       >
         Обратная связь
       </Typography>
-      <FormFeedback openPolicy={openPolicy} openSuccess={openSuccess}/>
+      <FormFeedback
+        openPolicy={openPolicy}
+        openSuccess={openSuccess}
+        closeFeedbackPopup={close}
+        closePopupSuccess={closeSuccess}
+      />
     </Popup>
   );
 }

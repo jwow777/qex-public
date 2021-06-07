@@ -59,6 +59,7 @@
 .popup__ready-services-subtitle {
   font-weight: 400;
   font-size: 25px;
+  margin: 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -86,5 +87,11 @@
   .popup__ready-services-subtitle {
     font-size: 16px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .popup__ready-services-content-box {
+    padding: 10px 20px 20px;
   }
 }

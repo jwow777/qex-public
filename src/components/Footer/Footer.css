@@ -10,13 +10,10 @@
   margin: auto;
 }
 
-.footer__navigation {
-}
-
 .footer__title {
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-size: 25px;
-  line-height: 30px;
+  line-height: 1.2;
   color: #f8f8f8;
   margin: 0 0 20px;
 }
@@ -29,7 +26,7 @@
 .footer__link {
   font-weight: 300;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.2;
   color: #f8f8f8;
   cursor: pointer;
 }
@@ -42,7 +39,7 @@
 .footer__copyright {
   font-weight: 300;
   font-size: 16px;
-  line-height: 76.6%;
+  line-height: 1;
   color: #bebebe;
   margin: 36px 0 0;
 }
@@ -58,9 +55,12 @@
     grid-row-gap: 35px;
   }
 
+  .footer__navigation {
+    grid-column: 1/3;
+  }
+
   .footer__title {
     font-size: 22px;
-    line-height: 26px;
     margin: 0 0 15px;
   }
 
@@ -70,7 +70,6 @@
 
   .footer__link {
     font-size: 14px;
-    line-height: 17px;
   }
 
   .footer__politics-box {

@@ -67,3 +67,12 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .we__title {
+    margin: 0 0 20px;
+  }
+
+  .we__list_crew {
+    grid-row-gap: 20px;
+  }
+}

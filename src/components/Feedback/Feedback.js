@@ -1,7 +1,6 @@
 /* eslint-disable prefer-template */
 /* eslint-disable no-console */
 import React, { useState } from 'react';
-// import MuiAlert from '@material-ui/lab/Alert';
 import {
   Button,
   Checkbox,
@@ -11,7 +10,6 @@ import {
   makeStyles,
   MenuItem,
   Select,
-  // Snackbar,
   TextField,
 } from '@material-ui/core';
 import {
@@ -229,7 +227,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Feedback({ openPolicy, openSuccess }) {
+function Feedback({ openPolicy, openSuccess, closeSuccess }) {
   const classes = useStyles();
   const [state, setState] = useState({
     communication: 'call',
@@ -241,7 +239,8 @@ function Feedback({ openPolicy, openSuccess }) {
     task: '',
     policy: true,
     localDate: new Date(),
-    date: new Date(),
+    date: new Date(new Date().setHours(new Date().getHours() + 1)),
+    verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
   });
 
   const twoNumber = (num) => (num < 10 ? '0' + num : num);
@@ -266,7 +265,7 @@ function Feedback({ openPolicy, openSuccess }) {
     return `${twoNumber(day)}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(hours)}:${twoNumber(date.getMinutes())}`;
   };
 
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(state.date);
   const handleDateChange = (date) => {
     setState({ ...state, date });
     setSelectedDate(date);
@@ -313,17 +312,16 @@ function Feedback({ openPolicy, openSuccess }) {
           company: state.company,
           task: state.task,
           localDate: handleDate(state.localDate),
-          chosenDate: JSON.stringify(state.localDate) === JSON.stringify(state.date) ? 'Не выбрана дата' : handleChosenDate(state.date),
+          chosenDate: JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? 'Не выбрана дата' : handleChosenDate(state.date),
           policy: true,
         },
       }),
     }).then((res) => {
       if (res.ok) {
-        openSuccess();
-        setTimeout(() => setOpenInputs(false), 0);
+        setOpenInputs(false);
         setState({
           communication: 'call',
-          phone: '',
+          phone: state.country.dialCode,
           country: {},
           email: '',
           firstName: '',
@@ -331,15 +329,17 @@ function Feedback({ openPolicy, openSuccess }) {
           task: '',
           policy: true,
           localDate: new Date(),
-          date: new Date(),
+          date: new Date(new Date().setHours(new Date().getHours() + 1)),
+          verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
         });
+        openSuccess();
+        setTimeout(() => closeSuccess(), 3000);
         return res.json();
       }
       // eslint-disable-next-line prefer-promise-reject-errors
       return Promise.reject(`Что-то пошло не так: ${res.status}`);
     }).catch((err) => console.log(err));
   };
-
   return (
     <section className='feedback'>
       <div className='feedback__container'>
@@ -491,7 +491,7 @@ function Feedback({ openPolicy, openSuccess }) {
                 minutesStep={5}
                 size='small'
                 onChange={handleDateChange}
-                className={`${classes.time}${JSON.stringify(state.localDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
+                className={`${classes.time}${JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
               />
               <DatePicker
                 autoOk
@@ -515,7 +515,7 @@ function Feedback({ openPolicy, openSuccess }) {
                 value={selectedDate}
                 size='small'
                 onChange={handleDateChange}
-                className={`${classes.date}${JSON.stringify(state.localDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
+                className={`${classes.date}${JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
               />
             </MuiPickersUtilsProvider>
             <Button

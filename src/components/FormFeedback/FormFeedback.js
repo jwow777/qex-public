@@ -208,7 +208,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function FormFeedback({ openPolicy, openSuccess }) {
+function FormFeedback({
+  openPolicy,
+  openSuccess,
+  closeFeedbackPopup,
+  closePopupSuccess,
+}) {
   const classes = useStyles();
   const [state, setState] = useState({
     communication: 'call',
@@ -220,7 +225,8 @@ function FormFeedback({ openPolicy, openSuccess }) {
     task: '',
     policy: true,
     localDate: new Date(),
-    date: new Date(),
+    date: new Date(new Date().setHours(new Date().getHours() + 1)),
+    verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
   });
   const twoNumber = (num) => (num < 10 ? '0' + num : num);
   const handleDate = (date) => {
@@ -228,6 +234,7 @@ function FormFeedback({ openPolicy, openSuccess }) {
 
     return `${twoNumber(date.getDate())}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(date.getHours())}:${twoNumber(date.getMinutes())} UTC: ${timezone(date.getTimezoneOffset() / -60)}`;
   };
+  console.log(state);
   const handleChosenDate = (date) => {
     const differenceTime = (num) => {
       const timezoneClient = date.getTimezoneOffset() / -60;
@@ -245,7 +252,7 @@ function FormFeedback({ openPolicy, openSuccess }) {
     return `${twoNumber(day)}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(hours)}:${twoNumber(date.getMinutes())}`;
   };
 
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(state.date);
   const handleChangeDate = (date) => {
     setState({ ...state, date });
     setSelectedDate(date);
@@ -262,7 +269,6 @@ function FormFeedback({ openPolicy, openSuccess }) {
       },
     });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     return fetch('https://qex.team/connector.php', {
@@ -283,16 +289,16 @@ function FormFeedback({ openPolicy, openSuccess }) {
           company: state.company,
           task: state.task,
           localDate: handleDate(state.localDate),
-          chosenDate: JSON.stringify(state.localDate) === JSON.stringify(state.date) ? 'Не выбрана дата' : handleChosenDate(state.date),
+          chosenDate: JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? 'Не выбрана дата' : handleChosenDate(state.date),
           policy: true,
         },
       }),
     }).then((res) => {
       if (res.ok) {
-        openSuccess();
+        closeFeedbackPopup();
         setState({
           communication: 'call',
-          phone: '',
+          phone: state.country.dialCode,
           country: {},
           email: '',
           firstName: '',
@@ -300,8 +306,11 @@ function FormFeedback({ openPolicy, openSuccess }) {
           task: '',
           policy: true,
           localDate: new Date(),
-          date: new Date(),
+          date: new Date(new Date().setHours(new Date().getHours() + 1)),
+          verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
         });
+        openSuccess();
+        setTimeout(() => closePopupSuccess(), 3000);
         return res.json();
       }
       // eslint-disable-next-line prefer-promise-reject-errors
@@ -438,7 +447,7 @@ function FormFeedback({ openPolicy, openSuccess }) {
             minutesStep={5}
             size='small'
             onChange={handleChangeDate}
-            className={`${classes.time}${JSON.stringify(state.localDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
+            className={`${classes.time}${JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
           />
           <DatePicker
             autoOk
@@ -462,7 +471,7 @@ function FormFeedback({ openPolicy, openSuccess }) {
             value={selectedDate}
             size='small'
             onChange={handleChangeDate}
-            className={`${classes.date}${JSON.stringify(state.localDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
+            className={`${classes.date}${JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
           />
         </MuiPickersUtilsProvider>
         <Button
