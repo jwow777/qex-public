@@ -3,14 +3,14 @@ import './Direction.css';
 import clockImage from '../../images/icons/clock.svg';
 import priceImage from '../../images/icons/price.png';
 
-function Direction({ data }) {
+function Direction({ item }) {
   const {
     image,
     title,
     description,
     time,
     price,
-  } = data;
+  } = item;
   return (
     <li className='direction'>
       <img src={image} alt={title} className='direction__image' />

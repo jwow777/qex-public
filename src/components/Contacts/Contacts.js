@@ -1,6 +1,7 @@
 import React from 'react';
-import './Contacts.css';
 import { Loader } from '@googlemaps/js-api-loader';
+import Container from '../Container/Container';
+import './Contacts.css';
 import qex from '../../images/icons/qex.png';
 import metro from '../../images/contacts/metro.png';
 import locationImage from '../../images/contacts/location.svg';
@@ -45,92 +46,89 @@ function Contacts() {
   });
 
   return (
-    <section className='contacts'>
-      <div className='contacts__container'>
-        <h2 className='title contacts__title'>Контакты</h2>
-        <ul className='list contacts__list'>
-          <li className='contacts__item'>
-            <div className='map__info'>
-              <h3 className='contacts__map-title contacts__map-title_ru'>
-                <img src={ru} alt='Россия' className='contacts__map-image'/>Россия, Москва
-              </h3>
-              <ul className='list contacts__map-list'>
-                <li className='contacts__map-text contacts__map-text_main'>
-                  <img src={metro} alt='Станция метро' />
-                  <span>Маяковская</span>
-                </li>
-                <li className='contacts__map-text'>
-                  <img src={locationImage} alt='Location' />
-                  <span>Ул. Гашека, 14, 123056, эт. 2</span>
-                </li>
-                <li className='contacts__map-text'>
-                  <img src={phone} alt='Phone' />
-                  <span>+7 (495) 489-96-96</span>
-                </li>
-                <li className='contacts__map-text'>
-                  <img src={letter} alt='Email' />
-                  <span>hello@qexsystems.ru</span>
-                </li>
-              </ul>
-              <ul className='list contacts__social-list'>
-                <li>
-                  <a href='https://instagram.com/qex_ru'>
-                    <img src={instagram} alt='Instagram' className='contacts__social-image'/>
-                  </a>
-                </li>
-                <li>
-                  <a href='https://www.facebook.com/qex.ru/'>
-                    <img src={facebook} alt='Facebook' className='contacts__social-image'/>
-                  </a>
-                </li>
-                <li>
-                  <a href='https://www.youtube.com/channel/UCLWnYwal83fPNJyzRqS1RbQ'>
-                    <img src={youtube} alt='Youtube' className='contacts__social-image'/>
-                  </a>
-                </li>
-                <li>
-                  <a href='http://t.me/Qex_systems_bot'>
-                    <img src={telegram} alt='Telegram' className='contacts__social-image'/>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div id='map-moscow' className='map'></div>
-          </li>
-          <li className='contacts__item contacts__gray'>
-            <div className='map__info'>
-              <h3 className='contacts__map-title contacts__map-title_us'>
-              <img src={us} alt='USA' className='contacts__map-image'/>USA, New York
-              </h3>
-              <ul className='list contacts__map-list'>
-                <li className='contacts__map-text contacts__map-text_main'>
-                  <div className='contacts__circle-block'>
-                    <span className='contacts__circle'>C</span>
-                    <span className='contacts__circle'>E</span>
-                  </div>
-                  <span>50th st subway station</span>
-                </li>
-                <li className='contacts__map-text'>
-                  <img src={locationImage} alt='Location' />
-                  <span>142 W 57th St, NY 10019</span>
-                </li>
-              </ul>
-              <ul className='list contacts__social-list'>
-                <li>
-                  <a href='https://www.instagram.com/qex.us/'>
-                    <img src={instagram} alt='Instagram' className='contacts__social-image'/>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div id='map-ny' className='map'></div>
-            <div className='map__soon'>
-              <span>Скоро открытие</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <Container classNameSection='contacts' title='Контакты'>
+      <ul className='list contacts__list'>
+        <li className='contacts__item'>
+          <div className='map__info'>
+            <h3 className='contacts__map-title contacts__map-title_ru'>
+              <img src={ru} alt='Россия' className='contacts__map-image'/>Россия, Москва
+            </h3>
+            <ul className='list contacts__map-list'>
+              <li className='contacts__map-text contacts__map-text_main'>
+                <img src={metro} alt='Станция метро' />
+                <span>Маяковская</span>
+              </li>
+              <li className='contacts__map-text'>
+                <img src={locationImage} alt='Location' />
+                <span>Ул. Гашека, 14, 123056, эт. 2</span>
+              </li>
+              <li className='contacts__map-text'>
+                <img src={phone} alt='Phone' />
+                <span>+7 (495) 489-96-96</span>
+              </li>
+              <li className='contacts__map-text'>
+                <img src={letter} alt='Email' />
+                <span>hello@qexsystems.ru</span>
+              </li>
+            </ul>
+            <ul className='list contacts__social-list'>
+              <li>
+                <a href='https://instagram.com/qex_ru'>
+                  <img src={instagram} alt='Instagram' className='contacts__social-image'/>
+                </a>
+              </li>
+              <li>
+                <a href='https://www.facebook.com/qex.ru/'>
+                  <img src={facebook} alt='Facebook' className='contacts__social-image'/>
+                </a>
+              </li>
+              <li>
+                <a href='https://www.youtube.com/channel/UCLWnYwal83fPNJyzRqS1RbQ'>
+                  <img src={youtube} alt='Youtube' className='contacts__social-image'/>
+                </a>
+              </li>
+              <li>
+                <a href='http://t.me/Qex_systems_bot'>
+                  <img src={telegram} alt='Telegram' className='contacts__social-image'/>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id='map-moscow' className='map'></div>
+        </li>
+        <li className='contacts__item contacts__gray'>
+          <div className='map__info'>
+            <h3 className='contacts__map-title contacts__map-title_us'>
+            <img src={us} alt='USA' className='contacts__map-image'/>USA, New York
+            </h3>
+            <ul className='list contacts__map-list'>
+              <li className='contacts__map-text contacts__map-text_main'>
+                <div className='contacts__circle-block'>
+                  <span className='contacts__circle'>C</span>
+                  <span className='contacts__circle'>E</span>
+                </div>
+                <span>50th st subway station</span>
+              </li>
+              <li className='contacts__map-text'>
+                <img src={locationImage} alt='Location' />
+                <span>142 W 57th St, NY 10019</span>
+              </li>
+            </ul>
+            <ul className='list contacts__social-list'>
+              <li>
+                <a href='https://www.instagram.com/qex.us/'>
+                  <img src={instagram} alt='Instagram' className='contacts__social-image'/>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id='map-ny' className='map'></div>
+          <div className='map__soon'>
+            <span>Скоро открытие</span>
+          </div>
+        </li>
+      </ul>
+    </Container>
   );
 }
 

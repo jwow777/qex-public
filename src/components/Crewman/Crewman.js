@@ -1,13 +1,13 @@
 import React from 'react';
 import './Crewman.css';
 
-function Crewman({ data }) {
+function Crewman({ item }) {
   const {
     name,
     position,
     quote,
     photo,
-  } = data;
+  } = item;
   return (
     <li className='crewman'>
       <img src={photo} alt={name} className='crewman__image'/>

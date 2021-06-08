@@ -1,8 +1,8 @@
 import React from 'react';
 import './Whoelse.css';
 
-function WhoElse({ data }) {
-  const { position, description, image } = data;
+function WhoElse({ item }) {
+  const { position, description, image } = item;
   return (
     <li className='whoelse'>
       <img src={image} alt={position} className='whoelse__image'/>

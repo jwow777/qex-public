@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import { Button, makeStyles, MobileStepper } from '@material-ui/core';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@material-ui/icons';
-import review from '../../utils/review';
+import Container from '../Container/Container';
 import Arrow from '../Arrow/Arrow';
 import Reviewer from '../Reviewer/Reviewer';
+import review from '../../utils/review';
 import './AboutUs.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -34,40 +35,37 @@ function AboutUs() {
   const handleChangeVisible = () => (exReview ? setExReview(false) : setExReview(true));
 
   return (
-    <section className='aboutus'>
-      <div className='aboutus__container'>
-        <h2 className='title aboutus__title'>О нас говорят</h2>
-        <ul className='list aboutus__list aboutus__list_desktop'>
-          {review.map((item, index) => (
-            <Reviewer data={item} key={index} extra={exReview}/>
-          ))}
-        </ul>
-        <ul className='list aboutus__list aboutus__list_mobile'>
-          <Reviewer data={review[activeStep]}/>
-          <Reviewer data={review[activeStep + 1]}/>
-        </ul>
-        <MobileStepper
-          steps={maxSteps}
-          position="static"
-          variant="dots"
-          activeStep={activeStep}
-          nextButton={
-            <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 2} className={classes.button}>
-              <KeyboardArrowRight fontSize="large"/>
-            </Button>
-          }
-          backButton={
-            <Button size="small" onClick={handleBack} disabled={activeStep === 0} className={classes.button}>
-              <KeyboardArrowLeft fontSize="large"/>
-            </Button>
-          }
-          className={classes.navbar}
-        />
-        <div className={`link link_navigation link_aboutus${exReview ? ' link_hidden' : ''}`} onClick={handleChangeVisible}>
-          Еще отзывы <Arrow down={true}/>
-        </div>
+    <Container classNameSection='aboutus' title='О нас говорят'>
+      <ul className='list aboutus__list aboutus__list_desktop'>
+        {review.map((item, index) => (
+          <Reviewer data={item} key={index} extra={exReview}/>
+        ))}
+      </ul>
+      <ul className='list aboutus__list aboutus__list_mobile'>
+        <Reviewer data={review[activeStep]}/>
+        <Reviewer data={review[activeStep + 1]}/>
+      </ul>
+      <MobileStepper
+        steps={maxSteps}
+        position="static"
+        variant="dots"
+        activeStep={activeStep}
+        nextButton={
+          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 2} className={classes.button}>
+            <KeyboardArrowRight fontSize="large"/>
+          </Button>
+        }
+        backButton={
+          <Button size="small" onClick={handleBack} disabled={activeStep === 0} className={classes.button}>
+            <KeyboardArrowLeft fontSize="large"/>
+          </Button>
+        }
+        className={classes.navbar}
+      />
+      <div className={`link link_navigation link_aboutus${exReview ? ' link_hidden' : ''}`} onClick={handleChangeVisible}>
+        Еще отзывы <Arrow down={true}/>
       </div>
-    </section>
+    </Container>
   );
 }
 

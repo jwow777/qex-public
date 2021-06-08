@@ -70,9 +70,12 @@
   height: 16px;
   object-fit: cover;
   box-sizing: border-box;
-  /* border: 1px solid rgba(0, 0, 0, 0.25); */
   border-radius: 50%;
   margin: 0 1px;
+}
+
+.reviewer__company-country-image_left {
+  object-position: left top;
 }
 
 .reviewer__company-title {

@@ -294,6 +294,22 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    setOpenInputs(false);
+    setState({
+      communication: 'call',
+      phone: state.country.dialCode,
+      country: {},
+      email: '',
+      firstName: '',
+      company: '',
+      task: '',
+      policy: true,
+      localDate: new Date(),
+      date: new Date(new Date().setHours(new Date().getHours() + 1)),
+      verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
+    });
+    openSuccess();
+    setTimeout(() => closeSuccess(), 5000);
     return fetch('https://qex.team/connector.php', {
       method: 'POST',
       headers: {
@@ -318,22 +334,6 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
       }),
     }).then((res) => {
       if (res.ok) {
-        setOpenInputs(false);
-        setState({
-          communication: 'call',
-          phone: state.country.dialCode,
-          country: {},
-          email: '',
-          firstName: '',
-          company: '',
-          task: '',
-          policy: true,
-          localDate: new Date(),
-          date: new Date(new Date().setHours(new Date().getHours() + 1)),
-          verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
-        });
-        openSuccess();
-        setTimeout(() => closeSuccess(), 3000);
         return res.json();
       }
       // eslint-disable-next-line prefer-promise-reject-errors

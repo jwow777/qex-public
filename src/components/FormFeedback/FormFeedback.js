@@ -234,7 +234,6 @@ function FormFeedback({
 
     return `${twoNumber(date.getDate())}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(date.getHours())}:${twoNumber(date.getMinutes())} UTC: ${timezone(date.getTimezoneOffset() / -60)}`;
   };
-  console.log(state);
   const handleChosenDate = (date) => {
     const differenceTime = (num) => {
       const timezoneClient = date.getTimezoneOffset() / -60;
@@ -271,6 +270,22 @@ function FormFeedback({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    closeFeedbackPopup();
+    setState({
+      communication: 'call',
+      phone: state.country.dialCode,
+      country: {},
+      email: '',
+      firstName: '',
+      company: '',
+      task: '',
+      policy: true,
+      localDate: new Date(),
+      date: new Date(new Date().setHours(new Date().getHours() + 1)),
+      verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
+    });
+    openSuccess();
+    setTimeout(() => closePopupSuccess(), 5000);
     return fetch('https://qex.team/connector.php', {
       method: 'POST',
       headers: {
@@ -295,22 +310,6 @@ function FormFeedback({
       }),
     }).then((res) => {
       if (res.ok) {
-        closeFeedbackPopup();
-        setState({
-          communication: 'call',
-          phone: state.country.dialCode,
-          country: {},
-          email: '',
-          firstName: '',
-          company: '',
-          task: '',
-          policy: true,
-          localDate: new Date(),
-          date: new Date(new Date().setHours(new Date().getHours() + 1)),
-          verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
-        });
-        openSuccess();
-        setTimeout(() => closePopupSuccess(), 3000);
         return res.json();
       }
       // eslint-disable-next-line prefer-promise-reject-errors

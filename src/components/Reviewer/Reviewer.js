@@ -58,7 +58,7 @@ function Reviewer({ data, extra }) {
             <div className='reviewer__company-country-box'>
               {
                 companyCountry
-                  ? companyCountry.map((item, index) => <img src={item} alt='Страна' className='reviewer__company-country-image' key={index}/>)
+                  ? companyCountry.map((item, index) => <img src={item.image} alt='Страна' className={`reviewer__company-country-image${item.class ? ' reviewer__company-country-image_left' : ''}`} key={index}/>)
                   : ''
               }
             </div>
@@ -126,11 +126,13 @@ function Reviewer({ data, extra }) {
                   ? <img src={company} alt='Компания' className='reviewer__company-image'/>
                   : <p className='reviewer__company-title'>{company}</p>
               }
-              {
-                companyCountry
-                  ? <img src={companyCountry} alt='Страна'/>
-                  : ''
-              }
+              <div className='reviewer__company-country-box'>
+                {
+                  companyCountry
+                    ? companyCountry.map((item, index) => <img src={item.image} alt='Страна' className={`reviewer__company-country-image${item.class ? ' reviewer__company-country-image_left' : ''}`} key={index}/>)
+                    : ''
+                }
+              </div>
             </div>
             <p className='reviewer__position'>{position}</p>
           </div>
