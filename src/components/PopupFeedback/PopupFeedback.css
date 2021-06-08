@@ -121,7 +121,7 @@
 }
 
 .feedback__input .MuiInput-underline::after {
-  border-bottom-color: '#3e7bfa';
+  border-bottom-color: #3e7bfa;
 }
 
 .feedback__input .MuiOutlinedInput-root:hover fieldset {

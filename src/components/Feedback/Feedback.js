@@ -2,37 +2,15 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import {
-  Button,
-  Checkbox,
-  FormControl,
-  Grid,
-  InputAdornment,
-  makeStyles,
-  MenuItem,
-  Select,
-  TextField,
+  Button, FormControl, makeStyles, TextField,
 } from '@material-ui/core';
-import {
-  Add,
-  ArrowDropDown,
-  Event,
-  LocalPhoneRounded,
-  MailOutlineRounded,
-  Telegram,
-  WhatsApp,
-} from '@material-ui/icons';
-import {
-  DatePicker,
-  MuiPickersUtilsProvider,
-  TimePicker,
-} from '@material-ui/pickers';
-import clsx from 'clsx';
-import DateFnsUtils from '@date-io/date-fns';
-import ru from 'date-fns/locale/ru';
-import PhoneInput from 'react-phone-input-2';
+import { Add } from '@material-ui/icons';
+import SelectContainer from '../Form/SelectContainer/SelectContainer';
+import CheckboxContainer from '../Form/CheckboxContainer/CheckboxContainer';
+import DateContainer from '../Form/DateContainer/DateContainer';
 import './Feedback.css';
 import bg from '../../images/feedback/bg.png';
-import checked from '../../images/feedback/checked-gray.svg';
+import { formApi } from '../../utils/api';
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -47,56 +25,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       gridColumn: '1/3',
       gridTemplateColumns: '1fr',
-    },
-  },
-  select: {
-    width: 70,
-    border: 'none',
-    borderRadius: '4px 0 0 4px',
-    backgroundColor: 'white',
-    alignItems: 'normal',
-    boxSizing: 'border-box',
-    '& div': {
-      borderRadius: '4px 0 0 4px',
-      whiteSpace: 'normal',
-      textOverflow: 'clip',
-      lineHeight: '24px',
-    },
-    '& div:focus': {
-      backgroundColor: '#fff',
-      borderRadius: '4px 0 0 4px',
-      minHeight: 'auto',
-    },
-    '& div svg': {
-      width: 19,
-      height: 19,
-    },
-    '& fieldset': {
-      border: 'none',
-    },
-    [theme.breakpoints.down('xs')]: {
-      width: 50,
-      '& div': {
-        paddingLeft: 8,
-      },
-      '& .MuiSelect-iconOutlined': {
-        right: 0,
-      },
-    },
-  },
-  email: {
-    width: '100%',
-    height: 'auto',
-    border: 'none',
-    borderLeft: '1px solid #c7c9d9',
-    overflow: 'hidden',
-    '& .MuiInputBase-root': {
-      height: '100%',
-      fontFamily: '"Inter", sans-serif',
-      color: '#303030',
-    },
-    '& fieldset': {
-      border: 'none',
     },
   },
   input: {
@@ -116,88 +44,6 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .MuiOutlinedInput-root:hover fieldset': {
       border: '1px solid #ff374f',
-    },
-    '& .MuiOutlinedInput-root:focus-within fieldset': {
-      border: '1px solid #ff374f',
-    },
-  },
-  icon: {
-    width: 10,
-    height: 10,
-    borderRadius: 2,
-    boxSizing: 'border-box',
-    border: '1px solid #b8b8b8',
-    backgroundImage:
-      'linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0))',
-  },
-  checkedIcon: {
-    '&:before': {
-      display: 'block',
-      width: 8,
-      height: 10,
-      backgroundImage: `url(${checked})`,
-      position: 'absolute',
-      top: 8,
-      left: 11,
-      content: '""',
-    },
-  },
-  time: {
-    width: 90,
-    height: 40,
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-    },
-    '& .MuiOutlinedInput-adornedEnd': {
-      height: 40,
-      padding: 0,
-    },
-    '& .MuiInputAdornment-positionEnd': {
-      marginLeft: 0,
-    },
-    '& input': {
-      fontFamily: '"Inter", sans-serif',
-      fontStyle: 'normal',
-      fontWeight: 400,
-    },
-    '& fieldset': {
-      borderColor: '#c7c9d9',
-    },
-    '& .MuiOutlinedInput-root:hover fieldset': {
-      borderColor: '#ff374f',
-    },
-    '& .MuiOutlinedInput-root:focus-within fieldset': {
-      border: '1px solid #ff374f',
-    },
-  },
-  date: {
-    width: 150,
-    height: 40,
-    marginLeft: 6,
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-      marginLeft: 0,
-    },
-    '& .MuiOutlinedInput-adornedStart': {
-      height: 40,
-      padding: '0 0 0 11px',
-    },
-    '& .MuiInputAdornment-positionStart': {
-      marginRight: 5,
-    },
-    '& .MuiInputAdornment-positionEnd': {
-      marginLeft: 0,
-    },
-    '& input': {
-      fontFamily: '"Inter", sans-serif',
-      fontStyle: 'normal',
-      fontWeight: 400,
-    },
-    '& fieldset': {
-      borderColor: '#c7c9d9',
-    },
-    '& .MuiOutlinedInput-root:hover fieldset': {
-      borderColor: '#ff374f',
     },
     '& .MuiOutlinedInput-root:focus-within fieldset': {
       border: '1px solid #ff374f',
@@ -227,7 +73,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Feedback({ openPolicy, openSuccess, closeSuccess }) {
+function Feedback({
+  openPolicy, openSuccess, closeSuccess,
+}) {
   const classes = useStyles();
   const [state, setState] = useState({
     communication: 'call',
@@ -242,35 +90,11 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
     date: new Date(new Date().setHours(new Date().getHours() + 1)),
     verificationDate: new Date(new Date().setHours(new Date().getHours() + 1)),
   });
-
-  const twoNumber = (num) => (num < 10 ? '0' + num : num);
-  const handleDate = (date) => {
-    const timezone = (num) => (num < 0 ? num : '+' + num);
-    return `${twoNumber(date.getDate())}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(date.getHours())}:${twoNumber(date.getMinutes())} UTC: ${timezone(date.getTimezoneOffset() / -60)}`;
-  };
-  const handleChosenDate = (date) => {
-    const differenceTime = (num) => {
-      const timezoneClient = date.getTimezoneOffset() / -60;
-      return num + timezoneClient * (-1) + 3;
-    };
-    let day = date.getDate();
-    let hours = differenceTime(date.getHours());
-    if (hours > 23) {
-      day += 1;
-      hours -= 24;
-    } else if (hours < 0) {
-      day -= 1;
-      hours += 24;
-    }
-    return `${twoNumber(day)}.${twoNumber(date.getMonth() + 1)}.${date.getFullYear()} ${twoNumber(hours)}:${twoNumber(date.getMinutes())}`;
-  };
-
   const [selectedDate, setSelectedDate] = useState(state.date);
-  const handleDateChange = (date) => {
+  const handleChangeDate = (date) => {
     setState({ ...state, date });
     setSelectedDate(date);
   };
-
   const handleChange = (e) => setState({ ...state, [e.target.name]: e.target.value });
   const handleChangeCheckbox = (e) => setState({ ...state, [e.target.name]: e.target.checked });
   const handleChangePhone = (phone, country) => {
@@ -283,7 +107,6 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
       },
     });
   };
-
   const [openInputs, setOpenInputs] = useState(false);
   function handleVisibleInputs() {
     if (openInputs) {
@@ -292,6 +115,7 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
       setOpenInputs(true);
     }
   }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setOpenInputs(false);
@@ -310,35 +134,7 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
     });
     openSuccess();
     setTimeout(() => closeSuccess(), 5000);
-    return fetch('https://qex.team/connector.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        action: 'app_form',
-        body: {
-          form_id: 2,
-          communication: state.communication,
-          phone: state.phone,
-          country: state.country,
-          dialCode: state.dialCode,
-          email: state.email,
-          firstName: state.firstName,
-          company: state.company,
-          task: state.task,
-          localDate: handleDate(state.localDate),
-          chosenDate: JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? 'Не выбрана дата' : handleChosenDate(state.date),
-          policy: true,
-        },
-      }),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
-      // eslint-disable-next-line prefer-promise-reject-errors
-      return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    }).catch((err) => console.log(err));
+    formApi(state, 2);
   };
   return (
     <section className='feedback'>
@@ -358,53 +154,12 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
           className={`${classes.form} feedback__form${openInputs ? ' feedback__form_extra' : ''}`}
           onSubmit={handleSubmit}
         >
-          <div className='feedback__phone-block'>
-            <Select
-              name='communication'
-              defaultValue={state.communication}
-              value={state.communication}
-              onChange={handleChange}
-              className={classes.select}
-            >
-              <MenuItem value='call'>
-                <LocalPhoneRounded className='feedback__select-image'/>
-                Звонок
-              </MenuItem>
-              <MenuItem value='whatsapp'>
-                <WhatsApp className='feedback__select-image'/>
-                WhatsApp
-              </MenuItem>
-              <MenuItem value='telegram'>
-                <Telegram className='feedback__select-image'/>
-                Telegram
-              </MenuItem>
-              <MenuItem value='email'>
-                <MailOutlineRounded className='feedback__select-image'/>
-                Email
-              </MenuItem>
-            </Select>
-            {state.communication === 'email' ? (
-              <TextField
-                name='email'
-                type='email'
-                variant='outlined'
-                size='small'
-                placeholder='email@mail.com'
-                value={state.email}
-                onChange={handleChange}
-                className={classes.email}
-              />
-            ) : (
-              <PhoneInput
-                country={'ru'}
-                value={state.phone}
-                onChange={handleChangePhone}
-                containerClass={'feedback__input-phone-block'}
-                inputClass={'input feedback__input-phone'}
-                buttonClass={'feedback__button-phone'}
-              />
-            )}
-          </div>
+          <SelectContainer
+            state={state}
+            handleChange={handleChange}
+            handleChangePhone={handleChangePhone}
+            classNameContainer='feedback'
+          />
           <Button
             type='submit'
             variant='contained'
@@ -447,77 +202,19 @@ function Feedback({ openPolicy, openSuccess, closeSuccess }) {
               className={classes.input}
             />
           </div>
-          <Grid
-            container
-            direction='row'
-            justify='flex-start'
-            alignItems='center'
-            className='feedback__checkbox feedback__checkbox_site'
-          >
-            <label className='feedback__label'>
-              <Checkbox
-                name='policy'
-                checked={state.policy}
-                onChange={handleChangeCheckbox}
-                size='small'
-                color='primary'
-                checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
-                icon={<span className={classes.icon} />}
-              />
-              Я согласен с
-            </label>
-            <div
-              className='feedback__label-politics'
-              onClick={openPolicy('paper')}
-            >
-              политикой обработки данных
-            </div>
-          </Grid>
+          <CheckboxContainer
+            state={state}
+            handleChangeCheckbox={handleChangeCheckbox}
+            openPolicy={openPolicy}
+            classNameContainer='feedback'
+          />
           <div className={`feedback__extra-input feedback__button-block${openInputs ? ' feedback__extra-input_visible' : ''}`}>
-            <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ru}>
-              <TimePicker
-                autoOk
-                variant='inline'
-                ampm={false}
-                inputVariant='outlined'
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <ArrowDropDown/>
-                    </InputAdornment>
-                  ),
-                }}
-                value={selectedDate}
-                minutesStep={5}
-                size='small'
-                onChange={handleDateChange}
-                className={`${classes.time}${JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
-              />
-              <DatePicker
-                autoOk
-                disableToolbar
-                disablePast={true}
-                variant='inline'
-                format='dd.MM.yyyy'
-                inputVariant='outlined'
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position='start'>
-                      <Event />
-                    </InputAdornment>
-                  ),
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <ArrowDropDown/>
-                    </InputAdornment>
-                  ),
-                }}
-                value={selectedDate}
-                size='small'
-                onChange={handleDateChange}
-                className={`${classes.date}${JSON.stringify(state.verificationDate) === JSON.stringify(state.date) ? ' formfeedback__date_unchange' : ''}`}
-              />
-            </MuiPickersUtilsProvider>
+            <DateContainer
+              state={state}
+              selectedDate={selectedDate}
+              handleChangeDate={handleChangeDate}
+              classNameContainer='feedback'
+            />
             <Button
               type='submit'
               variant='contained'

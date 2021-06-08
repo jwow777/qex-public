@@ -3,10 +3,7 @@ import './Crewman.css';
 
 function Crewman({ item }) {
   const {
-    name,
-    position,
-    quote,
-    photo,
+    name, position, quote, photo,
   } = item;
   return (
     <li className='crewman'>

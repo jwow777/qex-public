@@ -19,6 +19,8 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 900,
       maxHeight: '90vh',
       width: 'calc(100% - 64px)',
+      boxSizing: 'border-box',
+      padding: '10px 0 30px',
       borderRadius: 10,
       [theme.breakpoints.down('xs')]: {
         width: 'calc(100% - 32px)',

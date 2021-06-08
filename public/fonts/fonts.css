@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inter'),
+       url('./Inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Yanone Kaffeesatz'),
+       url('./Yanone_Kaffeesatz/YanoneKaffeesatz-Bold.ttf') format('truetype');
+}

@@ -1,5 +1,4 @@
 import React, { lazy } from 'react';
-import './Main.css';
 import ReadyServices from '../ReadyServices/ReadyServices';
 
 const Services = lazy(() => import('../Services/Services'));
@@ -12,11 +11,8 @@ const Contacts = lazy(() => import('../Contacts/Contacts'));
 
 function Main(
   {
-    onReadyServices,
-    dataService,
-    openPolicy,
-    openSuccess,
-    closeSuccess,
+    onReadyServices, dataService, openPolicy,
+    openSuccess, closeSuccess,
   },
 ) {
   return (
@@ -27,7 +23,11 @@ function Main(
       <Clients />
       <We />
       <AboutUs />
-      <Feedback openPolicy={openPolicy} openSuccess={openSuccess} closeSuccess={closeSuccess}/>
+      <Feedback
+        openPolicy={openPolicy}
+        openSuccess={openSuccess}
+        closeSuccess={closeSuccess}
+      />
       <Contacts />
     </main>
   );

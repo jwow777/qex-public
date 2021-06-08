@@ -32,10 +32,6 @@
   margin: 0 0 40px;
 }
 
-.not-found__image {
-
-}
-
 @media screen and (max-width: 600px) {
   .not-found__title {
     font-size: 27px;

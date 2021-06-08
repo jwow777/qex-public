@@ -173,6 +173,10 @@
   border: 1px solid #ff374f;
 }
 
+.feedback__date_unchange .MuiInputBase-root {
+  color: #8f90a6;
+}
+
 @media screen and (max-width: 960px) {
   .feedback {
     padding: 50px 20px;

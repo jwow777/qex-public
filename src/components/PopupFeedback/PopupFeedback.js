@@ -5,11 +5,7 @@ import FormFeedback from '../FormFeedback/FormFeedback';
 import './PopupFeedback.css';
 
 function PopupFeedback({
-  open,
-  close,
-  openPolicy,
-  openSuccess,
-  closeSuccess,
+  open, close, openPolicy, openSuccess, closeSuccess,
 }) {
   return (
     <Popup

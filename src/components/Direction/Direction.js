@@ -5,11 +5,7 @@ import priceImage from '../../images/icons/price.png';
 
 function Direction({ item }) {
   const {
-    image,
-    title,
-    description,
-    time,
-    price,
+    image, title, description, time, price,
   } = item;
   return (
     <li className='direction'>
