@@ -90,6 +90,23 @@
   color: #8f90a6;
 }
 
+/* .MuiPaper-root.MuiPopover-paper.MuiPaper-rounded {
+  top: calc(50% - 305px / 2) !important;
+  left: calc(50% - 310px / 2) !important;
+} */
+
+/* .MuiPickersToolbar-toolbar {
+  background-color: #3e7bfa;
+}
+
+.MuiPickersDay-daySelected {
+  background-color: #3e7bfa;
+}
+
+.MuiDialogActions-root .MuiButton-textPrimary {
+  color: #3e7bfa;
+} */
+
 @media screen and (max-width: 600px) {
   .popup__feedback .MuiDialog-paperWidthSm {
     padding: 25px;

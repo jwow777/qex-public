@@ -23,6 +23,10 @@ function DateContainer({
       [theme.breakpoints.down('xs')]: {
         width: '100%',
       },
+      '.MuiPaper-root': {
+        top: 45,
+        left: 45,
+      },
       '& .MuiOutlinedInput-adornedEnd': {
         height: 40,
         padding: 0,
@@ -84,7 +88,6 @@ function DateContainer({
     <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ru}>
       <TimePicker
         autoOk
-        variant='inline'
         ampm={false}
         inputVariant='outlined'
         InputProps={{
@@ -104,7 +107,6 @@ function DateContainer({
         autoOk
         disableToolbar
         disablePast={true}
-        variant='inline'
         format='dd.MM.yyyy'
         inputVariant='outlined'
         InputProps={{
