@@ -21,6 +21,7 @@
 .we__list_crew {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .we__list_whoelse {
