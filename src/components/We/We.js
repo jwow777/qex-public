@@ -12,7 +12,7 @@ function We() {
   return (
     <Container classNameSection={classNameSection} title='Мы'>
       <UlLists className={`${classNameSection}__list we__list_crew`} dataMap={crewman} Component={Crewman}/>
-      <h3 className='we__subtitle'>Кто еще:</h3>
+      {/* <h3 className='we__subtitle'>Кто еще:</h3> */}
       <UlLists className={`${classNameSection}__list we__list_whoelse`} dataMap={whoelse} Component={WhoElse}/>
     </Container>
   );

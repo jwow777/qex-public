@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
 import './Header.css';
 import HeaderMenu from '../HeaderMenu/HeaderMenu';
 import UlLists from '../UlLists/UlLists';
@@ -18,19 +17,19 @@ function Header({ onFeedback }) {
         <HeaderMenu onFeedback={onFeedback}/>
         <div className='header__content header__content_middle'>
           <h1 className='header__title'>
-            Разработка готовых решений автоматизации
+            Разработчики решений автоматизации для бизнеса
           </h1>
           <h2 className='header__subtitle'>
             Разрабатываем и внедряем софт для автоматизации бизнес-процессов
           </h2>
-          <Button
+          {/* <Button
             variant='contained'
             color='primary'
             className='header__button_test'
             onClick={onFeedback}
           >
             Заявка на разработку
-          </Button>
+          </Button> */}
         </div>
       </div>
       <UlLists className={`${classNameSection}__list`} dataMap={headerlist} Component={HeaderList}/>

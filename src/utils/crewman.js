@@ -2,7 +2,7 @@ const crewman = [
   {
     name: 'Алексей',
     position: 'Основатель',
-    quote: '“Мы не продаем часы - мы продаем результаты”',
+    quote: '“Наша миссия - делать команды по всему свету эффективнее”',
     photo: '/images/crewman/alexei.jpg',
   },
   {
@@ -11,12 +11,12 @@ const crewman = [
     quote: '“Решим самые сложные задачи, чтобы вашей команде было легко”',
     photo: '/images/crewman/nikolay.jpg',
   },
-  // {
-  //   name: 'Билл Гейтс',
-  //   position: 'Младший разработчик',
-  //   quote: '“Устал от конкуренции, решил присоединиться к сильной команде”',
-  //   photo: '/images/crewman/bill.jpg',
-  // },
+  {
+    name: 'и еще целая команда',
+    position: '',
+    quote: 'молодых, активных, сильных специалистов в области IT-development',
+    photo: '/images/crewman/crew.webp',
+  },
 ];
 
 export default crewman;

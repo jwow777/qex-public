@@ -9,7 +9,7 @@ function Crewman({ item }) {
     <li className='crewman'>
       <img src={photo} alt={name} className='crewman__image'/>
       <h3 className='crewman__name'>{name}</h3>
-      <p className='crewman__position'>{position}</p>
+      {position && <p className='crewman__position'>{position}</p>}
       <blockquote className='crewman__quote'>{quote}</blockquote>
     </li>
   );

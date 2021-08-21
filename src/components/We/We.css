@@ -21,13 +21,14 @@
 .we__list_crew {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .we__list_whoelse {
   display: grid;
   grid-template-columns: repeat(auto-fill, 280px);
   grid-gap: 25px; 
+  margin-top: 60px;
 }
 
 .we__subtitle {
@@ -57,6 +58,7 @@
   .we__list_whoelse {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 45px 15px;
+    margin-top: 40px;
   }
 
   .we__subtitle {
@@ -75,5 +77,9 @@
 
   .we__list_crew {
     grid-row-gap: 20px;
+  }
+
+  .we__list_whoelse {
+    margin-top: 20px;
   }
 }

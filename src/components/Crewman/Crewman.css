@@ -3,6 +3,14 @@
   font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
+.crewman__image {
+  width: 202px;
+  height: 203px;
+  border-radius: 4px;
+  margin-top: 5px; 
+  object-fit: contain; 
+}
+
 .crewman__name {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -37,6 +45,7 @@
   .crewman__image {
     grid-row: 1/5;
     width: 100%;
+    height: auto;
     border-radius: 4px;
     margin-top: 5px;
   }
